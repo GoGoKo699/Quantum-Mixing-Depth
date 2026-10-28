@@ -54,7 +54,15 @@ Begin with the [model and exact claims](science/model.md). The [physical interpr
 | Concrete Pauli circuits and dense-channel calculations | [Finite examples](science/finite_examples.md) |
 | Primary dependencies and the closest operational comparisons | [Related work](references/RELATED_WORK.md) and [bibliography](references/references.bib) |
 
-[The LLM reading guide](llms.txt) maps questions to the authoritative statements and proofs.
+## Learn the project
+
+The educational anchor is **John Watrous, *The Theory of Quantum Information* (2018)**. Begin with the [Watrous bridge](learning/WATROUS_BRIDGE.md), which maps selected sections to the project, translates channel and norm conventions, and explains the steps supplied by the mixing proofs.
+
+The [30-milestone understanding map](learning/MILESTONES.md) gives the connected route. Its background/preliminaries phase builds from individual states and operations to the complete operational question. Its narrative/innovation phase connects Pauli attenuation, causal witnesses, geometric constructions, and the unrestricted-connectivity comparison into the optimal-depth result. Each milestone has an understanding target, earlier dependencies, conceptual connections, and direct source pointers.
+
+The [three-qubit line example](science/finite_examples.md#exact-line-example) provides a concrete circuit to inspect alongside this route. The scientific pages above remain the authoritative homes of the exact statements and proofs.
+
+[The LLM reading guide](llms.txt) maps scientific questions and study routes to those files.
 
 ## Reproduce the finite checks
 
