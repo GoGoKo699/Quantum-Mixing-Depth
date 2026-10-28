@@ -26,7 +26,7 @@ One round applies disjoint one- or two-qubit unitaries, followed by independent 
 ```math
 \frac12\|\Psi_D-\mathcal R_n\|_\diamond\le\epsilon,
 \qquad
-\mathcal R_n(X)=\operatorname{Tr}(X)\frac{I_{2^n}}{2^n}.
+\mathcal R_n(X)=\mathrm{Tr}(X)\frac{I_{2^n}}{2^n}.
 ```
 
 The lower bounds allow arbitrary unitary gates. Matching upper constructions use fixed Clifford circuits, with **no auxiliary qubits, measurements, resets, discarded outputs, or fresh random control choices during execution**.

@@ -11,13 +11,13 @@ The runnable checks are in [verification/run_all.py](../verification/run_all.py)
 On sites $`0,1,2`$ of a line, apply the following seven gates chronologically:
 
 ```math
-\operatorname{CX}_{0\to1},\quad
-\operatorname{CX}_{1\to2},\quad
+\mathrm{CX}_{0\to1},\quad
+\mathrm{CX}_{1\to2},\quad
 H_1,\quad
-\operatorname{CX}_{1\to0},\quad
-\operatorname{CX}_{2\to1},\quad
+\mathrm{CX}_{1\to0},\quad
+\mathrm{CX}_{2\to1},\quad
 H_1,\quad
-\operatorname{CX}_{0\to1}.
+\mathrm{CX}_{0\to1}.
 ```
 
 Every two-qubit gate is nearest-neighbor. Call the resulting Clifford $`V_3`$. Exact enumeration of its 63 nonidentity Pauli inputs gives

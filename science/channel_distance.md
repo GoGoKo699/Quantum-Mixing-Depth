@@ -11,9 +11,9 @@ Let $`\mathcal P_n=\{I,X,Y,Z\}^{\otimes n}`$ denote Hermitian Pauli representati
 The operators form an orthogonal basis:
 
 ```math
-\operatorname{Tr}(PQ)=2^n\mathbf 1_{\{P=Q\}},
+\mathrm{Tr}(PQ)=2^n\mathbf 1_{\{P=Q\}},
 \qquad
-X=2^{-n}\sum_{P\in\mathcal P_n}\operatorname{Tr}(PX)P.
+X=2^{-n}\sum_{P\in\mathcal P_n}\mathrm{Tr}(PX)P.
 ```
 
 Local depolarization acts diagonally in this basis:
@@ -59,7 +59,7 @@ An idle round contributes the current Pauli weight to the exponent. Noise does n
 For analysis, set
 
 ```math
-\Lambda=\operatorname{Ad}_{U^\dagger}\circ\Psi_D.
+\Lambda=\mathrm{Ad}_{U^\dagger}\circ\Psi_D.
 ```
 
 Then $`\Lambda(P)=a_PP`$. This is a completely positive trace-preserving Pauli-diagonal map. Its Pauli-error representation is
@@ -97,7 +97,7 @@ For Pauli channels $`\Lambda_p`$ and $`\Lambda_q`$ on the same register,
 **Upper bound.** Each Pauli conjugation is a unitary channel and has diamond norm one. The triangle inequality gives
 
 ```math
-\left\|\sum_P(p_P-q_P)\operatorname{Ad}_P\right\|_\diamond
+\left\|\sum_P(p_P-q_P)\mathrm{Ad}_P\right\|_\diamond
 \le\sum_P|p_P-q_P|.
 ```
 

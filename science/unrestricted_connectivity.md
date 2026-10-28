@@ -3,7 +3,7 @@
 In the [discrete circuit model](model.md), every round consists of a parallel layer of disjoint one- or two-qubit unitaries followed by local depolarization on every qubit. Write $`0<\eta<1`$ for the retention parameter, $`\lambda=-\ln\eta`$, and
 
 ```math
-\mathcal R_n(X)=\operatorname{Tr}(X)\frac{I}{2^n},
+\mathcal R_n(X)=\mathrm{Tr}(X)\frac{I}{2^n},
 \qquad
 \varepsilon(\Phi)=\frac12\|\Phi-\mathcal R_n\|_\diamond.
 ```
@@ -40,7 +40,7 @@ Theorem 3.4 of the [versioned primary source](https://arxiv.org/html/2608.18536v
 \frac{4^{\delta b}}{4^b-1}\,3^r2^{bH_2(r/b)}
 +\frac{b^{-a}}{3^{w(P)}\binom b{w(P)}}
 +e^{-\beta b},
-\tag{1}
+\qquad\mathrm{(1)}
 ```
 
 for each fixed nonidentity Pauli $`P`$ and $`1\le r\le b/2`$. Here $`H_2`$ is binary entropy, and $`U`$ is sampled from the source's random matching ensemble. The source uses different letters for block size, cutoff, and polynomial-tail exponent; equation (1) preserves its cumulative bound and parameter dependence.
@@ -97,7 +97,7 @@ Apply the union bound to (1) over every nonidentity input Pauli of weight at mos
 (1+o(1))2^{-2[1-\delta-f(\alpha)]b}
 +b^{1-a}
 +e^{-[\beta-f(\alpha)\ln2]b}.
-\tag{2}
+\qquad\mathrm{(2)}
 \end{aligned}
 ```
 
@@ -118,7 +118,7 @@ The right side of (2) tends to zero. Thus there are absolute constants $`b_0,C_{
 \mathcal B(U_b)
 :=\min_{P\ne I}\bigl[w(P)+w(U_bPU_b^\dagger)\bigr]
 >\alpha b.
-\tag{3}
+\qquad\mathrm{(3)}
 ```
 
 Indeed, either the input weight exceeds $`r`$, or its output weight does. In either case their sum is at least $`r+1>\alpha b`$. This simultaneous statement concerns all physical Paulis, with no distinguished logical subspace or initialized check register.
@@ -131,12 +131,12 @@ Fix a block of even size $`b\ge b_0`$ and a circuit $`U_b=U_T\cdots U_1`$ satisf
 
 ```math
 s=\left\lceil\frac{\ln4+1}{2\lambda\alpha}\right\rceil.
-\tag{4}
+\qquad\mathrm{(4)}
 ```
 
 Execute $`s`$ identity/noise rounds, the $`T`$ layers of $`U_b`$ with noise after every layer, and another $`s`$ identity/noise rounds. Let $`\Phi_b`$ be the resulting physical channel.
 
-For analysis define $`\Lambda_b=\operatorname{Ad}_{U_b^\dagger}\circ\Phi_b`$. This conjugation is not an implemented decoding operation. Since the maximally mixed state is unitary invariant,
+For analysis define $`\Lambda_b=\mathrm{Ad}_{U_b^\dagger}\circ\Phi_b`$. This conjugation is not an implemented decoding operation. Since the maximally mixed state is unitary invariant,
 
 ```math
 \frac12\|\Phi_b-\mathcal R_b\|_\diamond
@@ -153,7 +153,7 @@ s w(P)+\sum_{\ell=1}^{T}w(P_\ell)
 +s w(U_bPU_b^\dagger)
 \right)\right]
 \le e^{-\lambda s\alpha b}.
-\tag{5}
+\qquad\mathrm{(5)}
 ```
 
 The internal noise is included exactly. The inequality uses only the two endpoint weights, so no assumption about ideal gates being physically noiseless is needed beyond the model's unitary-then-noise ordering.
@@ -167,7 +167,7 @@ A CPTP Pauli-diagonal map is a Pauli channel. Write $`p_b`$ for its Pauli-error 
 &\le(4^b-1)e^{-2\lambda s\alpha b}\\
 &\le e^{-[2\lambda s\alpha-\ln4]b}
 \le e^{-b}.
-\tag{6}
+\qquad\mathrm{(6)}
 \end{aligned}
 ```
 
@@ -181,7 +181,7 @@ Set $`q_\epsilon=\ln(1+4\epsilon^2)`$. Let $`b`$ be the smallest even integer at
 
 ```math
 \max\!\left\{b_0,\ 2,\ \ln\frac{2n}{q_\epsilon}\right\}.
-\tag{7}
+\qquad\mathrm{(7)}
 ```
 
 Write $`n_{\mathrm e}=2\lfloor n/2\rfloor`$. For sufficiently large $`n`$, $`n_{\mathrm e}\ge b`$. Decompose
@@ -201,7 +201,7 @@ D=\max\!\left\{
 2s+\max_j T_j,
 \left\lceil\frac{\ln(6/q_\epsilon)}{2\lambda}\right\rceil
 \right\}.
-\tag{8}
+\qquad\mathrm{(8)}
 ```
 
 Each encoder begins after the initial $`s`$ idle rounds. After its last gate layer, that block idles until round $`D`$. It therefore receives at least $`s`$ final noise rounds. All idle rounds are charged and noise continues on every wire. Equations (5) and (6) remain valid for each block.
@@ -225,7 +225,7 @@ The block operations factor as channels, regardless of entanglement in the input
 \sum_{j=1}^{B}\chi^2(p_{b_j}\|u_{b_j})
 +3\eta^{2D}\right]\\
 &\le e^{q_\epsilon}=1+4\epsilon^2.
-\tag{9}
+\qquad\mathrm{(9)}
 \end{aligned}
 ```
 
@@ -236,7 +236,7 @@ Conjugating by the product of the ideal block inverses preserves the distance to
 =\frac12\|p_{\mathrm{total}}-u_n\|_1
 \le\frac12\sqrt{\chi^2(p_{\mathrm{total}}\|u_n)}
 \le\epsilon.
-\tag{10}
+\qquad\mathrm{(10)}
 ```
 
 Since $`b=O_\epsilon(\log n)`$ and $`T_j\le\lceil C_{\mathrm{spr}}\log(2b)\rceil`$, (8) is $`O_{\eta,\epsilon}(\log\log n)`$. Each matching round contains $`b_j/2`$ two-qubit gates, yielding a total of $`O(n\log\log n)`$ gates.
@@ -270,7 +270,7 @@ For $`\kappa=2/\eta-1`$, the [unrestricted causal-cone corollary](causal_bound.m
 1-\exp\!\left[
 -\frac{n}{8\,4^D\,\kappa^{2^{D+2}-4}}
 \right].
-\tag{11}
+\qquad\mathrm{(11)}
 ```
 
 Thus $`\varepsilon(\Phi)\le\epsilon<1`$ requires

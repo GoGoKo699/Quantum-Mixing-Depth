@@ -20,7 +20,7 @@ Then, as $`L\to\infty`$,
 ```math
 D_{\min}([L]^d,\eta,\epsilon)
 =\Theta_{d,\eta,\epsilon}\!\left((\ln n)^{1/(d+1)}\right).
-\tag{G1}
+\qquad\mathrm{(G1)}
 ```
 
 The lower bound allows arbitrary unitary gates. The upper uses a fixed Clifford circuit, with no ancillary qubits, measurements, resets, discarded outputs, or fresh randomness during execution. Every input qubit may be entangled with an inaccessible reference, and every physical output is included in the criterion.
@@ -42,7 +42,7 @@ For every positive integer $`m`$, there is an $`m`$-qubit Clifford $`V_m`$ such 
 ```math
 w(P)+w(V_mPV_m^\dagger)\geq\alpha m
 \qquad\text{for every nonidentity Pauli }P.
-\tag{G2}
+\qquad\mathrm{(G2)}
 ```
 
 Here $`w(P)`$ counts nonidentity tensor factors; Pauli phases are ignored.
@@ -63,7 +63,7 @@ be the number of nonidentity Paulis with weight at most $`r`$. A union bound giv
 \ w(V_mPV_m^\dagger)\leq r
 \right]
 \leq\frac{A_r^2}{4^m-1}.
-\tag{G3}
+\qquad\mathrm{(G3)}
 ```
 
 Write $`H_2(x)=-x\log_2x-(1-x)\log_2(1-x)`$ and $`\beta=H_2(\alpha)+\alpha\log_23<2/3`$. The binomial-tail bound for $`\alpha\leq1/2`$ implies
@@ -99,7 +99,7 @@ That source counts entangling depth. The present model charges all rounds, inclu
 
 ```math
 D_{\mathrm{line}}(m)\leq14m
-\tag{G4}
+\qquad\mathrm{(G4)}
 ```
 
 is sufficient. Equivalently, these local factors can be absorbed into the arbitrary two-qubit Clifford gates allowed by the model. Every compiled layer is followed by the required product noise.
@@ -129,7 +129,7 @@ The last sequence need not invert the first. Let $`S_R`$ be the ideal Clifford o
 ```math
 q_1=1,
 \qquad q_d=2q_{d-1}+1=2^d-1.
-\tag{G5}
+\qquad\mathrm{(G5)}
 ```
 
 For example, the coordinate sequences in dimensions two and three are $`(1,2,1)`$ and $`(1,2,1,3,1,2,1)`$.
@@ -138,7 +138,7 @@ For an input Pauli $`P`$, let $`P_j`$ be its ideal image after the first $`j`$ l
 
 ```math
 W_R(P)=\sum_{j=0}^{q_d}w(P_j).
-\tag{G6}
+\qquad\mathrm{(G6)}
 ```
 
 ## Lemma: checkpoint weight
@@ -147,7 +147,7 @@ For every nonidentity Pauli on $`R`$,
 
 ```math
 W_R(P)\geq\alpha^d b.
-\tag{G7}
+\qquad\mathrm{(G7)}
 ```
 
 **Proof.** Proceed by induction on $`d`$. The case $`d=1`$ is (G2).
@@ -162,14 +162,14 @@ These checkpoint sets are disjoint: the first ends immediately before the middle
 
 ```math
 W_R(P)\geq(r+r')\alpha^{d-1}b'.
-\tag{G8}
+\qquad\mathrm{(G8)}
 ```
 
 At least one line acted on in the middle stage has a nonidentity incoming Pauli restriction, because the full incoming Pauli is nonidentity. On this line the incoming weight is at most $`r`$, and the outgoing weight is at most $`r'`$: each line meets each hyperplane at one site. The line branch-weight property gives
 
 ```math
 r+r'\geq\alpha m_d.
-\tag{G9}
+\qquad\mathrm{(G9)}
 ```
 
 Combining (G8) and (G9) proves $`W_R(P)\geq\alpha^d m_db'=\alpha^d b`$. $`\square`$
@@ -188,7 +188,7 @@ After conjugating the output by the inverse ideal Clifford $`S_R^\dagger`$ for a
 a_I=1,
 \qquad
 0\leq a_P\leq e^{-\lambda t\alpha^d b}\qquad(P\neq I).
-\tag{G10}
+\qquad\mathrm{(G10)}
 ```
 
 If $`p_R`$ is its Pauli-error distribution and $`u_R`$ is uniform over the $`4^b`$ Paulis, then
@@ -196,7 +196,7 @@ If $`p_R`$ is its Pauli-error distribution and $`u_R`$ is uniform over the $`4^b
 ```math
 \chi^2(p_R\Vert u_R)
 \leq(4^b-1)e^{-2\lambda t\alpha^d b}.
-\tag{G11}
+\qquad\mathrm{(G11)}
 ```
 
 **Proof.** Every elementary Clifford gate permutes Pauli operators up to sign, and depolarization multiplies a Pauli by $`\eta`$ for each occupied site. At the checkpoints, the inserted identity rounds contribute the factor
@@ -226,7 +226,7 @@ For the construction below, set $`t=m`$ and write $`c=\lambda\alpha^d`$. If $`m\
 &\leq e^{-cmb}
 \leq e^{-cm^{d+1}}.
 \end{aligned}
-\tag{G12}
+\qquad\mathrm{(G12)}
 ```
 
 ## Tiling the physical register
@@ -237,7 +237,7 @@ Each coordinate interval can be partitioned into intervals of integer lengths be
 
 ```math
 B\leq\frac{n}{m^d}.
-\tag{G13}
+\qquad\mathrm{(G13)}
 ```
 
 Run the block protocols in parallel, with $`t=m`$ noise rounds at every checkpoint. Use the same recursive coordinate sequence in each block. During a line stage, shorter compiled circuits can be padded with identities so that every block reaches the next checkpoint at the same round. This padding only adds depolarization along existing Pauli paths.
@@ -248,7 +248,7 @@ Each line has length at most $`2m`$, so (G4) bounds each line stage by $`28m`$ c
 D\leq C_dm,
 \qquad
 C_d=28(2^d-1)+2^d.
-\tag{G14}
+\qquad\mathrm{(G14)}
 ```
 
 The first term counts all compiled gate rounds, including one-qubit gates. The second counts the inserted idle rounds at all checkpoints. Constants are chosen for transparent accounting and are not optimized.
@@ -267,14 +267,14 @@ By [chi-square tensorization](channel_distance.md#lemma-chi-square-tensorization
 &\leq\frac12
 \sqrt{\exp\!\left(B e^{-cm^{d+1}}\right)-1}.
 \end{aligned}
-\tag{G15}
+\qquad\mathrm{(G15)}
 ```
 
 This is a finite error bound for every permitted tiling, provided $`m\geq\ln4/c`$. In particular, it suffices that
 
 ```math
 B e^{-cm^{d+1}}\leq\ln(1+4\epsilon^2).
-\tag{G16}
+\qquad\mathrm{(G16)}
 ```
 
 A simple explicit block choice avoids solving an implicit equation involving $`B`$. Put
@@ -295,7 +295,7 @@ m_n=
 \left(\frac{\ln_+(n/L_\epsilon)}{c}\right)^{1/(d+1)}
 \right\}
 \right\rceil.
-\tag{G17}
+\qquad\mathrm{(G17)}
 ```
 
 Whenever $`\min_jL_j\geq m_n`$, the tiling and protocol exist. Because $`B\leq n`$, this choice implies (G16), and hence error at most $`\epsilon`$ with depth at most $`C_dm_n`$.

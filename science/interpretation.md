@@ -35,7 +35,7 @@ This alone is an intuition, rather than a trace-distance proof. The [inverse-obs
 There are at least order $`n/D^d`$ separated histories. Their individual biases can be as small as an exponential in the negative spacetime volume, yet sufficiently many such biases remain distinguishable together. The necessary balance has the form
 
 ```math
-\frac{n}{\operatorname{poly}(D)}
+\frac{n}{\mathrm{poly}(D)}
 \exp[-O_{d,\eta}(D^{d+1})]=O_\epsilon(1),
 ```
 

@@ -13,21 +13,21 @@ For a fixed retention parameter $`0<\eta<1`$, one-qubit depolarization is
 ```math
 \mathcal D_\eta(X)
 =
-\eta X+(1-\eta)\operatorname{Tr}(X)\frac{I_2}{2},
+\eta X+(1-\eta)\mathrm{Tr}(X)\frac{I_2}{2},
 \qquad
 \mathcal N_\eta=\mathcal D_\eta^{\otimes n}.
 ```
 
 A larger $`\eta`$ means weaker noise. Throughout, $`\lambda=-\log\eta>0`$, and logarithms are natural unless a base is written explicitly.
 
-A charged round consists of a layer $`U_\ell`$ of disjoint one- or two-qubit unitary gates, followed by $`\mathcal N_\eta`$ on **every site**, including idle sites. With $`\operatorname{Ad}_U(X)=UXU^\dagger`$, a depth-$`D`$ protocol implements
+A charged round consists of a layer $`U_\ell`$ of disjoint one- or two-qubit unitary gates, followed by $`\mathcal N_\eta`$ on **every site**, including idle sites. With $`\mathrm{Ad}_U(X)=UXU^\dagger`$, a depth-$`D`$ protocol implements
 
 ```math
 \Psi_D
 =
-(\mathcal N_\eta\circ\operatorname{Ad}_{U_D})
+(\mathcal N_\eta\circ\mathrm{Ad}_{U_D})
 \circ\cdots\circ
-(\mathcal N_\eta\circ\operatorname{Ad}_{U_1}).
+(\mathcal N_\eta\circ\mathrm{Ad}_{U_1}).
 ```
 
 Identity layers are allowed and count as rounds. The control sequence is fixed before execution. It may depend on the register, architecture, noise parameter, and desired accuracy, but does not depend on the unknown input. Gates can be arbitrary unitaries in the lower bound. The upper constructions use Clifford gates.
@@ -39,7 +39,7 @@ There are no auxiliary qubits, measurements, feedback, resets, discarded registe
 Write $`\tau_n=I_{2^n}/2^n`$ and define the maximally mixed replacer by
 
 ```math
-\mathcal R_n(X)=\operatorname{Tr}(X)\tau_n.
+\mathcal R_n(X)=\mathrm{Tr}(X)\tau_n.
 ```
 
 The complete mixing error is
@@ -55,7 +55,7 @@ For a difference of quantum channels, this equals the largest output half-trace 
 ```math
 \frac12
 \left\|
-(\Psi_D\otimes\operatorname{id}_R)(\rho_{AR})
+(\Psi_D\otimes\mathrm{id}_R)(\rho_{AR})
 -\tau_n\otimes\rho_R
 \right\|_1
 \le \epsilon

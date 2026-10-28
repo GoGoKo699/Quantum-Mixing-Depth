@@ -31,9 +31,9 @@ Both distributions, conditional on the number $`J`$ of identity labels, are unif
 ```math
 \delta_{\mathrm{pass}}(n,D)
 =
-\operatorname{TV}\!\left(
-\operatorname{Bin}\!\left(n,\frac{1+3\eta^D}{4}\right),
-\operatorname{Bin}\!\left(n,\frac14\right)
+\mathrm{TV}\!\left(
+\mathrm{Bin}\!\left(n,\frac{1+3\eta^D}{4}\right),
+\mathrm{Bin}\!\left(n,\frac14\right)
 \right).
 ```
 
