@@ -1,6 +1,6 @@
 # A 30-milestone map of quantum mixing depth
 
-This map follows one question: how many local gate-and-noise rounds are needed to replace every possible input of a quantum register by the maximally mixed state, including the removal of correlations with an inaccessible reference? The [scientific model](../science/model.md) fixes that task. The [proof pages](../science/model.md#theorem-g-the-geometric-optimum) give the authoritative statements and derivations.
+This map follows one question: how many local gate-and-noise rounds are needed to replace every possible input of a quantum register by the maximally mixed state, including the removal of correlations with an inaccessible reference, to a prescribed global accuracy? The [scientific model](../science/model.md) fixes that task. The [proof pages](../science/model.md#theorem-g-the-geometric-optimum) give the authoritative statements and derivations.
 
 The selected educational anchor is John Watrous, *The Theory of Quantum Information* (2018). The [Watrous bridge](WATROUS_BRIDGE.md) identifies the relevant sections and translates their conventions. Section and theorem numbers below refer to the author's January 2018 manuscript. Links labeled with a Watrous section open the corresponding official chapter PDF. The book supplies the channel, norm, and composite-system framework; the project pages supply the causal-cone, checkpoint, and depth arguments. Primary research papers cited for imported results are proof dependencies, not additional educational anchors.
 
