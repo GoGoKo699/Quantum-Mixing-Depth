@@ -1,0 +1,64 @@
+# Quantum Mixing Depth
+
+This repository studies the minimum depth needed to mix an entire unknown quantum
+register under deterministic unitary gate layers followed by fixed local
+depolarization. Every input qubit and every retained output is part of the task;
+the half-diamond error includes arbitrary input-reference entanglement.
+
+Canonical entrypoints:
+- README.md: question, optimal-depth table, scientific routes, reproduction, scope,
+  purpose and contact.
+- science/model.md: authoritative model and quantifiers; Theorem G for regular
+  lattices, Theorem A for unrestricted pairs, Proposition P for passive noise.
+- science/channel_distance.md: exact noisy-Clifford Pauli reduction, Pauli-channel
+  diamond distance, Fourier chi-square normalization, and block tensorization.
+- science/causal_bound.md: arbitrary-unitary inverse-observable converse; physical
+  joint POVMs on disjoint full syntactic cones; finite architecture bounds.
+- science/geometric_construction.md: elementary line branch-weight existence,
+  inherited nearest-neighbor compiler, recursive coordinate sequence, rectangular
+  checkpoint lemma, finite error bounds, and tiling without added qubits.
+- science/unrestricted_connectivity.md: exact imported Pauli-spreading theorem,
+  low-weight union bound, no-auxiliary complete-mixing conversion and block sizes.
+- science/passive.md: exact binomial expression for the passive diamond error,
+  finite upper/lower bounds and leading logarithmic depth.
+- science/finite_examples.md: finite circuits, checkpoint weights, direct channel
+  calculations and the relation of those checks to the general proofs.
+- science/interpretation.md: spacetime exposure to noise, global versus local
+  relaxation, resource accounting, physical interpretation and limits.
+- references/RELATED_WORK.md: inherited mechanisms, precise primary dependencies,
+  and distinctions from error mitigation, sampling, and dissipative reachability.
+- references/references.bib: bibliographic metadata and source versions.
+- verification/README.md: reproducibility commands, coverage and limitations.
+- verification/run_all.py: deterministic finite verification runner.
+
+Reader routes:
+- Story: model, passive benchmark, interpretation, then the two matching proofs.
+- Geometric theorem: model, channel distance, causal bound, geometric construction.
+- Unrestricted theorem: model, causal bound, channel distance, unrestricted
+  connectivity, and the stated primary spreading theorem.
+- Reproduction: verification README, runner and expected outputs; keep finite
+  observations separate from universal proof.
+- Attribution: related work before making a novelty claim.
+
+Preserve these distinctions:
+- Noise retention eta lies strictly between zero and one and is fixed with size.
+- Every charged layer includes noise on all sites, including idle sites.
+- The circuit is fixed independently of the unknown input.
+- No auxiliary qubits, resets, measurements, discarded outputs or runtime random
+  controls are supplied to the upper constructions.
+- The maximally mixed replacer is the target; pure-state cooling is a different task.
+- Complete-channel error is stronger than uniform outcomes in one basis or decay
+  of local observables.
+- The geometric upper concerns regular filled boxes; the lower is broader.
+- Dimension and target global error are fixed in the asymptotic laws.
+- The inverse final Clifford is analytical only and is never executed.
+- The inverse-noise maps in the lower bound are not physical operations; the
+  resulting bounded witness POVMs are physical.
+- Clifford compilation and the all-to-all spreading theorem are imported.
+- Scrambling-enhanced noisy mixing is established prior work.
+- The all-to-all source is a versioned 2026 preprint; the geometric proof uses
+  established linear-neighbor Clifford synthesis.
+- Do not infer continuous driven-Hamiltonian wall-time optimality, optimized
+  constants, practical device advantage, or quantum-over-classical advantage.
+- Verification results support finite identities, not external peer review.
+

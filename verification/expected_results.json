@@ -1,0 +1,499 @@
+{
+  "checkpoint_checks": [
+    {
+      "certified_induction_bound": 8,
+      "checkpoint_count": 4,
+      "checkpoint_sum_histogram": {
+        "8": 4,
+        "9": 4,
+        "10": 24,
+        "11": 44,
+        "12": 24,
+        "13": 44,
+        "14": 100,
+        "15": 328,
+        "16": 549,
+        "17": 516,
+        "18": 584,
+        "19": 676,
+        "20": 592,
+        "21": 396,
+        "22": 156,
+        "23": 40,
+        "24": 14
+      },
+      "exhaustive": true,
+      "minimum_observed_checkpoint_sum": 8,
+      "minimum_witness": {
+        "checkpoint_weights": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "input": "ZIZIII"
+      },
+      "nonidentity_paulis_checked": 4095,
+      "qubits": 6,
+      "sides": [
+        2,
+        3
+      ],
+      "stage_axes_zero_based": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "certified_induction_bound": 16,
+      "checkpoint_count": 4,
+      "checkpoint_sum_histogram": {
+        "16": 543,
+        "18": 42,
+        "20": 4770,
+        "22": 6738,
+        "24": 40980,
+        "26": 76518,
+        "28": 79110,
+        "30": 39222,
+        "32": 12204,
+        "34": 1512,
+        "36": 504
+      },
+      "exhaustive": true,
+      "minimum_observed_checkpoint_sum": 16,
+      "minimum_witness": {
+        "checkpoint_weights": [
+          2,
+          2,
+          6,
+          6
+        ],
+        "input": "XXIIIIIII"
+      },
+      "nonidentity_paulis_checked": 262143,
+      "qubits": 9,
+      "sides": [
+        3,
+        3
+      ],
+      "stage_axes_zero_based": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "certified_induction_bound": 8,
+      "checkpoint_count": 8,
+      "checkpoint_sum_histogram": {
+        "8": 2,
+        "12": 6,
+        "14": 3,
+        "16": 1,
+        "17": 4,
+        "18": 9,
+        "19": 2,
+        "20": 18,
+        "21": 6,
+        "22": 34,
+        "23": 22,
+        "24": 32,
+        "25": 22,
+        "26": 40,
+        "27": 54,
+        "28": 66,
+        "29": 76,
+        "30": 113,
+        "31": 104,
+        "32": 194,
+        "33": 240,
+        "34": 309,
+        "35": 398,
+        "36": 492,
+        "37": 674,
+        "38": 784,
+        "39": 1004,
+        "40": 1242,
+        "41": 1604,
+        "42": 1892,
+        "43": 2508,
+        "44": 2810,
+        "45": 3412,
+        "46": 3788,
+        "47": 4518,
+        "48": 4616,
+        "49": 5030,
+        "50": 5474,
+        "51": 5138,
+        "52": 5552,
+        "53": 4518,
+        "54": 3734,
+        "55": 2440,
+        "56": 1352,
+        "57": 788,
+        "58": 204,
+        "59": 196,
+        "61": 10
+      },
+      "exhaustive": true,
+      "minimum_observed_checkpoint_sum": 8,
+      "minimum_witness": {
+        "checkpoint_weights": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "input": "IYIIIIII"
+      },
+      "nonidentity_paulis_checked": 65535,
+      "qubits": 8,
+      "sides": [
+        2,
+        2,
+        2
+      ],
+      "stage_axes_zero_based": [
+        0,
+        1,
+        0,
+        2,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "certified_induction_bound": 64,
+      "checkpoint_count": 8,
+      "checkpoint_sum_histogram": {
+        "68": 2,
+        "72": 15,
+        "76": 16,
+        "80": 11,
+        "84": 31,
+        "88": 92,
+        "90": 42,
+        "92": 125,
+        "94": 42,
+        "96": 85,
+        "98": 72,
+        "100": 60,
+        "102": 162,
+        "104": 106,
+        "106": 108,
+        "108": 99,
+        "110": 108,
+        "112": 109,
+        "114": 116,
+        "116": 178,
+        "118": 238,
+        "120": 341,
+        "122": 356,
+        "124": 334,
+        "126": 274,
+        "128": 112,
+        "130": 64,
+        "132": 17,
+        "134": 6,
+        "136": 6,
+        "138": 2,
+        "140": 3,
+        "142": 3,
+        "144": 7,
+        "146": 11,
+        "148": 24,
+        "150": 43,
+        "152": 63,
+        "154": 115,
+        "156": 152,
+        "158": 232,
+        "160": 253,
+        "162": 250,
+        "164": 259,
+        "166": 207,
+        "168": 167,
+        "170": 123,
+        "172": 69,
+        "174": 44,
+        "176": 25,
+        "178": 10,
+        "180": 7,
+        "182": 1,
+        "188": 1,
+        "216": 1
+      },
+      "exhaustive": false,
+      "minimum_observed_checkpoint_sum": 68,
+      "minimum_witness": {
+        "checkpoint_weights": [
+          2,
+          6,
+          6,
+          2,
+          6,
+          18,
+          18,
+          10
+        ],
+        "input": "IIIIIIIIIIIIIIIIIIYIIYIIIII"
+      },
+      "nonidentity_paulis_checked": 5399,
+      "qubits": 27,
+      "sides": [
+        3,
+        3,
+        3
+      ],
+      "stage_axes_zero_based": [
+        0,
+        1,
+        0,
+        2,
+        0,
+        1,
+        0
+      ]
+    }
+  ],
+  "line_certificates": [
+    {
+      "branch_weight_histogram": {
+        "2": 2,
+        "3": 8,
+        "4": 5
+      },
+      "branch_weight_minimum": 2,
+      "gates": [
+        [
+          "CX",
+          0,
+          1
+        ],
+        [
+          "H",
+          0
+        ],
+        [
+          "S",
+          1
+        ],
+        [
+          "CX",
+          1,
+          0
+        ],
+        [
+          "H",
+          1
+        ],
+        [
+          "S",
+          0
+        ]
+      ],
+      "minimum_witness": {
+        "input": "ZI",
+        "output": "YI"
+      },
+      "nonidentity_paulis_checked": 15,
+      "primitive_rounds": 6,
+      "qubits": 2,
+      "symplectic_pairs_checked": 256
+    },
+    {
+      "branch_weight_histogram": {
+        "4": 45,
+        "6": 18
+      },
+      "branch_weight_minimum": 4,
+      "gates": [
+        [
+          "CX",
+          0,
+          1
+        ],
+        [
+          "CX",
+          1,
+          2
+        ],
+        [
+          "H",
+          1
+        ],
+        [
+          "CX",
+          1,
+          0
+        ],
+        [
+          "CX",
+          2,
+          1
+        ],
+        [
+          "H",
+          1
+        ],
+        [
+          "CX",
+          0,
+          1
+        ]
+      ],
+      "minimum_witness": {
+        "input": "XII",
+        "output": "YZY"
+      },
+      "nonidentity_paulis_checked": 63,
+      "primitive_rounds": 7,
+      "qubits": 3,
+      "symplectic_pairs_checked": 4096
+    }
+  ],
+  "noisy_clifford": {
+    "accumulated_weight_histogram": {
+      "20": 2,
+      "23": 6,
+      "24": 1,
+      "25": 2,
+      "26": 4,
+      "27": 5,
+      "28": 5,
+      "29": 10,
+      "30": 5,
+      "31": 3,
+      "32": 3,
+      "33": 3,
+      "34": 2,
+      "35": 2,
+      "36": 3,
+      "37": 2,
+      "38": 2,
+      "39": 3
+    },
+    "cases": [
+      {
+        "checkpoint_only_chi_square_bound": 1.2746612008107028,
+        "chi_square": 0.011079348006589468,
+        "decoded_choi_frobenius_residual": 2.2504718219553084e-16,
+        "direct_choi_half_trace_distance": 0.032275441935183516,
+        "eta": 0.85,
+        "exact_half_diamond_from_pauli_distribution": 0.032275441935183405,
+        "parseval_residual": 6.938893903907228e-18,
+        "passive_half_diamond_at_same_round_count": 0.13526556137266285,
+        "two_block_chi_square": 0.022281447965430065,
+        "two_block_chi_square_error_bound": 0.07463485774996503,
+        "two_block_exact_half_diamond": 0.046986166352994914
+      },
+      {
+        "checkpoint_only_chi_square_bound": 30.329284980438572,
+        "chi_square": 10.737639380844408,
+        "decoded_choi_frobenius_residual": 5.894120290585095e-16,
+        "direct_choi_half_trace_distance": 0.46930228397438645,
+        "eta": 0.97,
+        "exact_half_diamond_from_pauli_distribution": 0.4693022839743862,
+        "parseval_residual": 0.0,
+        "passive_half_diamond_at_same_round_count": 0.69283225632582,
+        "two_block_chi_square": 136.7721782347495,
+        "two_block_chi_square_error_bound": 1.0,
+        "two_block_exact_half_diamond": 0.675911295953638
+      }
+    ],
+    "dense_ideal_action_maximum_frobenius_residual": 1.2560739669470201e-15,
+    "gate_rounds": 7,
+    "input_reference_dimension": 8,
+    "minimum_actual_accumulated_pauli_weight": 20,
+    "qubits": 3,
+    "total_noisy_rounds": 13,
+    "wait_rounds_per_endpoint": 3
+  },
+  "nonclifford_inverse_witness": {
+    "actual_witness_norms": [
+      1.7002823659000479,
+      1.7694445093906572
+    ],
+    "bhattacharyya_lower_bound": 0.027760800526946627,
+    "commutator_frobenius_residual": 2.1957127735219788e-14,
+    "eta": 0.82,
+    "final_regions_product_state_frobenius_distance": 0.07347228317731472,
+    "independent_bit_bias": 0.33557958700743507,
+    "joint_probabilities_sign_order_minus_plus": [
+      0.1103636213003027,
+      0.2218465851959798,
+      0.22184658519597986,
+      0.44594320830773765
+    ],
+    "joint_product_distribution_residual": 1.1102230246251565e-16,
+    "maximally_mixed_target_distribution_residual": 5.551115123125783e-17,
+    "noisy_rounds": 2,
+    "norm_bound": 2.9799190377388602,
+    "output_half_trace_distance": 0.5110428241195386,
+    "outside_cone_support_frobenius_residual": 1.3525364818567839e-14,
+    "povm_total_variation": 0.19594320830773765,
+    "product_inverse_identity_frobenius_residual": 1.7848968206864756e-14,
+    "qubits": 4,
+    "selected_final_cones": [
+      [
+        0,
+        1
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    "selected_input_sites": [
+      0,
+      3
+    ],
+    "single_inverse_identity_frobenius_residual": 1.0288934036859787e-14
+  },
+  "passive_binomial_checks": [
+    {
+      "binomial_total_variation": 0.5651782500000001,
+      "depth": 3,
+      "direct_pauli_half_diamond": 0.5651782500000001,
+      "eta": 0.91,
+      "finite_lower_bound": 0.06852288440534571,
+      "finite_upper_bound": 0.6526116295552433,
+      "qubits": 1
+    },
+    {
+      "binomial_total_variation": 0.6020155792730627,
+      "depth": 3,
+      "direct_pauli_half_diamond": 0.6020155792730627,
+      "eta": 0.91,
+      "finite_lower_bound": 0.13235038312346303,
+      "finite_upper_bound": 1.0,
+      "qubits": 2
+    },
+    {
+      "binomial_total_variation": 0.7912704727483642,
+      "depth": 3,
+      "direct_pauli_half_diamond": 0.7912704727483644,
+      "eta": 0.91,
+      "finite_lower_bound": 0.24718414233399855,
+      "finite_upper_bound": 1.0,
+      "qubits": 4
+    },
+    {
+      "binomial_total_variation": 0.5914077758789062,
+      "depth": 2,
+      "direct_pauli_half_diamond": 0.5914077758789062,
+      "eta": 0.75,
+      "finite_lower_bound": 0.11188349364871186,
+      "finite_upper_bound": 1.0,
+      "qubits": 3
+    }
+  ],
+  "schema_version": 1,
+  "status": "PASS"
+}
