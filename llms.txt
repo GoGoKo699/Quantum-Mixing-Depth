@@ -6,8 +6,8 @@ depolarization. Every input qubit and every retained output is part of the task;
 the half-diamond error includes arbitrary input-reference entanglement.
 
 Canonical entrypoints:
-- README.md: question, optimal-depth table, scientific routes, reproduction, scope,
-  purpose and contact.
+- README.md: question, optimal-depth table, scientific and learning routes,
+  reproduction, scope, purpose and contact.
 - science/model.md: authoritative model and quantifiers; Theorem G for regular
   lattices, Theorem A for unrestricted pairs, Proposition P for passive noise.
 - science/channel_distance.md: exact noisy-Clifford Pauli reduction, Pauli-channel
@@ -28,11 +28,19 @@ Canonical entrypoints:
 - references/RELATED_WORK.md: inherited mechanisms, precise primary dependencies,
   and distinctions from error mitigation, sampling, and dissipative reachability.
 - references/references.bib: bibliographic metadata and source versions.
+- learning/WATROUS_BRIDGE.md: the selected Watrous (2018) educational anchor,
+  verified section pointers, notation and normalization translations, and the
+  steps connecting textbook foundations to the project's proofs.
+- learning/MILESTONES.md: exactly M01 through M30, ordered through background /
+  preliminaries and narrative / innovation; understanding targets, dependencies,
+  conceptual connections and source pointers for the complete scientific story.
 - verification/README.md: reproducibility commands, coverage and limitations.
 - verification/run_all.py: deterministic finite verification runner.
 
 Reader routes:
 - Story: model, passive benchmark, interpretation, then the two matching proofs.
+- Study: Watrous bridge, the milestone map, and the linked canonical science;
+  use finite examples to connect the abstract objects with concrete circuits.
 - Geometric theorem: model, channel distance, causal bound, geometric construction.
 - Unrestricted theorem: model, causal bound, channel distance, unrestricted
   connectivity, and the stated primary spreading theorem.
@@ -61,4 +69,6 @@ Preserve these distinctions:
 - Do not infer continuous driven-Hamiltonian wall-time optimality, optimized
   constants, practical device advantage, or quantum-over-classical advantage.
 - Verification results support finite identities, not external peer review.
+- Watrous (2018) is the single educational anchor. The bridge distinguishes its
+  foundations from locally supplied derivations and imported research theorems.
 
