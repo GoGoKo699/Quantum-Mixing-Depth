@@ -56,7 +56,7 @@ This formula includes the optimal reference-assisted input. It is not a restrict
 One qubit has three nonidentity Pauli multipliers equal to $`a`$. Write $`p_{\mathrm P}`$ for its four-outcome Pauli-error distribution and $`u`$ for the uniform distribution on those four outcomes. Fourier chi-square tensorization gives
 
 ```math
-\chi^2(p_{\mathrm P}^{\otimes n}\|u^{\otimes n})
+\chi^2(p_{\mathrm P}^{\otimes n}\Vert u^{\otimes n})
 =
 (1+3a^2)^n-1.
 ```

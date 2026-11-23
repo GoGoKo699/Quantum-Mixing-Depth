@@ -5,7 +5,7 @@ In the [discrete circuit model](model.md), every round consists of a parallel la
 ```math
 \mathcal R_n(X)=\mathrm{Tr}(X)\frac{I}{2^n},
 \qquad
-\varepsilon(\Phi)=\frac12\|\Phi-\mathcal R_n\|_\diamond.
+\varepsilon(\Phi)=\frac12\lVert \Phi-\mathcal R_n\rVert_\diamond.
 ```
 
 All $`n`$ qubits contain arbitrary input information, all outputs are retained, and the diamond norm includes arbitrary input entanglement with an external reference. The construction below uses a fixed Clifford circuit and the specified bath. No auxiliary qubits or random control are used during execution.
@@ -139,8 +139,8 @@ Execute $`s`$ identity/noise rounds, the $`T`$ layers of $`U_b`$ with noise afte
 For analysis define $`\Lambda_b=\mathrm{Ad}_{U_b^\dagger}\circ\Phi_b`$. This conjugation is not an implemented decoding operation. Since the maximally mixed state is unitary invariant,
 
 ```math
-\frac12\|\Phi_b-\mathcal R_b\|_\diamond
-=\frac12\|\Lambda_b-\mathcal R_b\|_\diamond.
+\frac12\lVert \Phi_b-\mathcal R_b\rVert_\diamond
+=\frac12\lVert \Lambda_b-\mathcal R_b\rVert_\diamond.
 ```
 
 Let $`P_\ell=U_\ell\cdots U_1 P U_1^\dagger\cdots U_\ell^\dagger`$, with irrelevant Pauli phases suppressed. Each noisy Clifford layer attenuates the coefficient of the same ideal Pauli trajectory. Thus $`\Lambda_b`$ is a CPTP Pauli-diagonal map and its eigenvalue on $`P\ne I`$ is
@@ -162,7 +162,7 @@ A CPTP Pauli-diagonal map is a Pauli channel. Write $`p_b`$ for its Pauli-error 
 
 ```math
 \begin{aligned}
-\chi^2(p_b\|u_b)
+\chi^2(p_b\Vert u_b)
 &=\sum_{P\ne I}a_P^2\\
 &\le(4^b-1)e^{-2\lambda s\alpha b}\\
 &\le e^{-[2\lambda s\alpha-\ln4]b}
@@ -189,7 +189,7 @@ Write $`n_{\mathrm e}=2\lfloor n/2\rfloor`$. For sufficiently large $`n`$, $`n_{
 ```math
 n_{\mathrm e}=Bb+r,
 \qquad B=\left\lfloor\frac{n_{\mathrm e}}b\right\rfloor,
-\qquad 0\le r<b.
+\qquad 0\le r\lt b.
 ```
 
 The remainder $`r`$ is even. Use one block of size $`b+r`$ and $`B-1`$ blocks of size $`b`$. Every block size $`b_j`$ is even and belongs to $`[b,2b)`$. If $`n`$ is odd, retain the one remaining input qubit as an idle noisy wire. This partition adds no qubits and initializes no part of the input.
@@ -209,7 +209,7 @@ Each encoder begins after the initial $`s`$ idle rounds. After its last gate lay
 The optional last qubit receives $`D`$ depolarizing layers, so its Pauli-error chi-square divergence is exactly $`3\eta^{2D}\le q_\epsilon/2`$. By (7),
 
 ```math
-\sum_{j=1}^{B}\chi^2(p_{b_j}\|u_{b_j})
+\sum_{j=1}^{B}\chi^2(p_{b_j}\Vert u_{b_j})
 \le B e^{-b}\le n e^{-b}\le q_\epsilon/2.
 ```
 
@@ -217,12 +217,12 @@ The block operations factor as channels, regardless of entanglement in the input
 
 ```math
 \begin{aligned}
-1+\chi^2(p_{\mathrm{total}}\|u_n)
+1+\chi^2(p_{\mathrm{total}}\Vert u_n)
 &=\prod_{j=1}^{B}
-\left(1+\chi^2(p_{b_j}\|u_{b_j})\right)
+\left(1+\chi^2(p_{b_j}\Vert u_{b_j})\right)
 \left(1+3\eta^{2D}\right)^{n-n_{\mathrm e}}\\
 &\le\exp\!\left[
-\sum_{j=1}^{B}\chi^2(p_{b_j}\|u_{b_j})
+\sum_{j=1}^{B}\chi^2(p_{b_j}\Vert u_{b_j})
 +3\eta^{2D}\right]\\
 &\le e^{q_\epsilon}=1+4\epsilon^2.
 \qquad\mathrm{(9)}
@@ -233,15 +233,15 @@ Conjugating by the product of the ideal block inverses preserves the distance to
 
 ```math
 \varepsilon(\Phi)
-=\frac12\|p_{\mathrm{total}}-u_n\|_1
-\le\frac12\sqrt{\chi^2(p_{\mathrm{total}}\|u_n)}
+=\frac12\lVert p_{\mathrm{total}}-u_n\rVert_1
+\le\frac12\sqrt{\chi^2(p_{\mathrm{total}}\Vert u_n)}
 \le\epsilon.
 \qquad\mathrm{(10)}
 ```
 
 Since $`b=O_\epsilon(\log n)`$ and $`T_j\le\lceil C_{\mathrm{spr}}\log(2b)\rceil`$, (8) is $`O_{\eta,\epsilon}(\log\log n)`$. Each matching round contains $`b_j/2`$ two-qubit gates, yielding a total of $`O(n\log\log n)`$ gates.
 
-For the finitely many sizes with $`n_{\mathrm e}<b`$, including $`n=1`$, use passive depolarization for
+For the finitely many sizes with $`n_{\mathrm e}\lt b`$, including $`n=1`$, use passive depolarization for
 
 ```math
 D_{\mathrm{small}}

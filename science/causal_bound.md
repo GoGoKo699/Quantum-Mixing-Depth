@@ -14,7 +14,7 @@ The result applies to the discrete rounds defined in [the model](model.md). On $
 The complete-mixing error is
 
 ```math
-\frac12\left\|\Psi_D-\mathcal R_n\right\|_\diamond,
+\frac12\left\lVert\Psi_D-\mathcal R_n\right\rVert_\diamond,
 \qquad
 \tau_n=\frac{I}{2^n},
 \qquad
@@ -50,7 +50,7 @@ The sum starts after the first gate layer, because this is where the first noise
 Let $`S`$ be any set of input sites whose final full syntactic cones $`\{C_i(D):i\in S\}`$ are pairwise disjoint. Then every circuit of the stated form satisfies
 
 ```math
-\frac12\left\|\Psi_D-\mathcal R_n\right\|_\diamond
+\frac12\left\lVert\Psi_D-\mathcal R_n\right\rVert_\diamond
 \geq
 1-\exp\!\left[
 -\frac18\sum_{i\in S}\kappa^{-2V_i(D)}
@@ -61,7 +61,7 @@ Let $`S`$ be any set of input sites whose final full syntactic cones $`\{C_i(D):
 In particular, if $`|S|=M`$ and $`V_i(D)\leq V`$ for all selected sites, then
 
 ```math
-\frac12\left\|\Psi_D-\mathcal R_n\right\|_\diamond
+\frac12\left\lVert\Psi_D-\mathcal R_n\right\rVert_\diamond
 \geq
 1-\exp\!\left[-\frac{M}{8\kappa^{2V}}\right].
 \qquad\mathrm{(C2)}
@@ -90,10 +90,10 @@ with tensor factors placed in their original order. The single-site depolarizing
 The inverse is not a physical channel. It is used only to construct a mathematical observable. Both maps preserve the identity and trace and are self-adjoint for the Hilbert–Schmidt inner product. Because $`E_j`$ is unital and completely positive, it contracts the operator norm. Therefore
 
 ```math
-\left\|\mathcal D_{\eta,j}^{-1}(A)\right\|_\infty
+\left\lVert\mathcal D_{\eta,j}^{-1}(A)\right\rVert_\infty
 \leq
-\left[\eta^{-1}+(\eta^{-1}-1)\right]\|A\|_\infty
-=\kappa\|A\|_\infty.
+\left[\eta^{-1}+(\eta^{-1}-1)\right]\lVert A\rVert_\infty
+=\kappa\lVert A\rVert_\infty.
 \qquad\mathrm{(C4)}
 ```
 
@@ -112,7 +112,7 @@ U_\ell A_i^{(\ell-1)}U_\ell^\dagger
 Every $`A_i^{(\ell)}`$ is Hermitian and traceless. Its support lies in $`C_i(\ell)`$: unitary conjugation enlarges support only within the next syntactic cone, and each inverse single-site noise map preserves support. On sites outside this cone the observable has an identity factor, which the inverse map leaves unchanged. Applying (C4) only on cone sites gives
 
 ```math
-\|A_i^{(D)}\|_\infty
+\lVert A_i^{(D)}\rVert_\infty
 \leq
 \prod_{\ell=1}^{D}\kappa^{|C_i(\ell)|}
 =\kappa^{V_i(D)}=:K_i.
@@ -215,7 +215,7 @@ Measurement cannot increase trace distance, and the diamond norm includes the pa
 For arbitrary pair connectivity, every depth-$`D`$ circuit satisfies
 
 ```math
-\frac12\left\|\Psi_D-\mathcal R_n\right\|_\diamond
+\frac12\left\lVert\Psi_D-\mathcal R_n\right\rVert_\diamond
 \geq
 1-\exp\!\left[
 -\frac{n}{8\,4^D\,\kappa^{\,2^{D+2}-4}}
@@ -261,7 +261,7 @@ S_d(D)=\sum_{\ell=1}^{D}(2\ell+1)^d.
 Then
 
 ```math
-\frac12\left\|\Psi_D-\mathcal R_n\right\|_\diamond
+\frac12\left\lVert\Psi_D-\mathcal R_n\right\rVert_\diamond
 \geq
 1-\exp\!\left[
 -\frac{n}{8(4D+1)^d\kappa^{2S_d(D)}}

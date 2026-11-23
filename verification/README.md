@@ -57,6 +57,17 @@ q=x_1+m_1x_2+m_1m_2x_3+\cdots.
 
 The recursive stage-axis sequence is $`(0,1,0)`$ in two dimensions and $`(0,1,0,2,0,1,0)`$ in three. Checkpoint weights include the state before the first stage and after every stage. There are exactly $`2^d`$ checkpoints.
 
+## Stationary contacts
+
+The verification runner includes four stationary-contact checks. To run them independently, use `python verification/check_stationary_contacts.py`.
+
+| Check | Expected result |
+|---|---|
+| Returning SWAP sweeps | Every token returns and visits the contact twice for all path lengths 1 through 128. |
+| Six-qubit path | Two rounds with alternating contacts give half-diamond error about 0.166105. The contact-free cone for one input gives a lower bound of $`1/2`$ for the clustered layout. |
+| Two-qubit line | Exact Pauli Fourier error $`3/16`$ for the three-round Clifford sequence and $`3/8`$ for the best transport schedule, agreeing with direct Choi evolution. |
+| Non-Clifford witness | The contact-restricted inverse observable satisfies the adjoint identity and the norm and bias bounds in a dense two-layer fixture. |
+
 ## Reference output maintenance
 
 `expected_results.json` records the checked finite results. Updating it is an explicit authoring operation:

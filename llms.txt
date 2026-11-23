@@ -9,7 +9,10 @@ Canonical entrypoints:
 - README.md: question, optimal-depth table, scientific and learning routes,
   reproduction, scope, purpose and contact.
 - science/model.md: authoritative model and quantifiers; Theorem G for regular
-  lattices, Theorem A for unrestricted pairs, Proposition P for passive noise.
+  lattices, Theorem S for fixed noise contacts, Theorem A for unrestricted pairs,
+  and Proposition P for passive noise.
+- science/stationary_contacts.md: throughput and causal lower bounds, returning
+  SWAP sweeps and Clifford upper bound, transport comparison and layout effect.
 - science/channel_distance.md: exact noisy-Clifford Pauli reduction, Pauli-channel
   diamond distance, Fourier chi-square normalization, and block tensorization.
 - science/causal_bound.md: arbitrary-unitary inverse-observable converse; physical
@@ -50,7 +53,8 @@ Reader routes:
 
 Preserve these distinctions:
 - Noise retention eta lies strictly between zero and one and is fixed with size.
-- Every charged layer includes noise on all sites, including idle sites.
+- Uniform noise affects every site, including idle sites. In the stationary
+  variant it acts only on the designated stationary contacts after each layer.
 - The circuit is fixed independently of the unknown input.
 - No auxiliary qubits, resets, measurements, discarded outputs or runtime random
   controls are supplied to the upper constructions.

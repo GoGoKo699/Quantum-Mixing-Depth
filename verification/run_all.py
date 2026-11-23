@@ -563,6 +563,8 @@ def main() -> int:
     except ImportError as exc:
         raise SystemExit("NumPy is required for the independent dense checks; install verification/requirements.txt") from exc
 
+    from check_stationary_contacts import run_checks as stationary_contact_checks
+
     line2 = line_certificate(2, LINE2)
     line3 = line_certificate(3, LINE3)
     require(line3[0]["branch_weight_minimum"] == 4, "Three-site branch certificate changed")
@@ -580,6 +582,7 @@ def main() -> int:
         "noisy_clifford": dense_clifford_checks(np, line3[1]),
         "nonclifford_inverse_witness": inverse_witness_check(np),
         "passive_binomial_checks": passive_binomial_checks(np),
+        "stationary_contacts": stationary_contact_checks(),
         "status": "PASS",
     }
     # JSON normalizes integer dictionary keys so comparison matches the file.
@@ -602,6 +605,7 @@ def main() -> int:
         print("PASS: actual noisy Clifford paths, dense Choi matrices, and Pauli chi-square identities")
         print("PASS: non-Clifford inverse witnesses and joint POVM product moments")
         print("PASS: passive Pauli-distribution versus binomial error formula")
+        print("PASS: stationary-contact sweeps, finite channel comparisons, and inverse witness")
         print(f"{'Wrote' if args.write_expected else 'Matched'} {EXPECTED.name}")
     return 0
 
