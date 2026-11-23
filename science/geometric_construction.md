@@ -74,7 +74,7 @@ A_r
 \leq2^{\beta m}.
 ```
 
-For completeness, the binomial-tail bound follows by setting $`q=r/m`$. For $`0<q\leq1/2`$ and $`j\leq r`$,
+For completeness, the binomial-tail bound follows by setting $`q=r/m`$. For $`0\lt q\leq1/2`$ and $`j\leq r`$,
 $`q^j(1-q)^{m-j}\geq q^r(1-q)^{m-r}=2^{-mH_2(q)}`$.
 Summing these terms in the binomial distribution gives
 $`\sum_{j=0}^{r}\binom mj\leq2^{mH_2(q)}`$; the case $`r=0`$ is immediate.
@@ -233,7 +233,7 @@ For the construction below, set $`t=m`$ and write $`c=\lambda\alpha^d`$. If $`m\
 
 Consider a filled rectangular register $`[L_1]\times\cdots\times[L_d]`$ with $`n=\prod_jL_j`$. Fix an integer $`m\leq\min_jL_j`$.
 
-Each coordinate interval can be partitioned into intervals of integer lengths between $`m`$ and $`2m-1`$. Explicitly, write $`L_j=q_jm+r_j`$ with $`q_j\geq1`$ and $`0\leq r_j<m`$; use one interval of length $`m+r_j`$ and $`q_j-1`$ intervals of length $`m`$. Their Cartesian products tile the register into $`B`$ disjoint rectangular blocks, each with volume at least $`m^d`$. No site is omitted or added, and
+Each coordinate interval can be partitioned into intervals of integer lengths between $`m`$ and $`2m-1`$. Explicitly, write $`L_j=q_jm+r_j`$ with $`q_j\geq1`$ and $`0\leq r_j\lt m`$; use one interval of length $`m+r_j`$ and $`q_j-1`$ intervals of length $`m`$. Their Cartesian products tile the register into $`B`$ disjoint rectangular blocks, each with volume at least $`m^d`$. No site is omitted or added, and
 
 ```math
 B\leq\frac{n}{m^d}.

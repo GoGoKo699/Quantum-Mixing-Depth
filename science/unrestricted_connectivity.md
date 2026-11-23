@@ -241,7 +241,7 @@ Conjugating by the product of the ideal block inverses preserves the distance to
 
 Since $`b=O_\epsilon(\log n)`$ and $`T_j\le\lceil C_{\mathrm{spr}}\log(2b)\rceil`$, (8) is $`O_{\eta,\epsilon}(\log\log n)`$. Each matching round contains $`b_j/2`$ two-qubit gates, yielding a total of $`O(n\log\log n)`$ gates.
 
-For the finitely many sizes with $`n_{\mathrm e}<b`$, including $`n=1`$, use passive depolarization for
+For the finitely many sizes with $`n_{\mathrm e}\lt b`$, including $`n=1`$, use passive depolarization for
 
 ```math
 D_{\mathrm{small}}
