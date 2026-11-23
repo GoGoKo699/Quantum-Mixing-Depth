@@ -94,6 +94,12 @@ Both papers clarify that classical simulability and local mixing can occur witho
 
 <a id="watrous2018"></a>
 
+## Stationary noise and contact geometry
+
+[Lovas, Agrawal and Vijay](https://arxiv.org/abs/2304.02664) study how encoded quantum information survives in one-dimensional circuits with Haar-random gates and boundary depolarization. [Li, Sang and Hsieh](https://arxiv.org/abs/2203.16555) analyze ensemble entanglement dynamics under bulk and boundary noise. These give boundary-noise models and information-retention precedents. The [stationary-contact theorem](../science/stationary_contacts.md) optimizes deterministic controls and charges every noise layer, with the error of the entire reference-assisted channel as its objective. Its contact-density crossover follows from matching a throughput bound with causal exposure.
+
+[Kivlichan et al.](https://arxiv.org/abs/1711.04789) use alternating nearest-neighbor SWAP matchings to reverse a line for simulation. The two-pass sweep here uses the corresponding ordinary SWAP matching pattern to return each carrier and expose it twice to a stationary noise contact. The earlier [Quantum Cooling Geometry](https://github.com/GoGoKo699/Quantum-Cooling-Geometry/blob/a60aee0cda44f2327a02564144a0e59ff8cdbf34/science/geometry.md) develops contact conveyors and a layout comparison for pure reset with bulk noise and ideal reset contacts. In complete mixing, the contacts supply partial depolarization, with a maximally mixed target, and the return sweeps operate inside Clifford checkpoints to obtain the contact-density law.
+
 ## Watrous: channel and norm foundations
 
 John Watrous, *The Theory of Quantum Information*, Cambridge University Press (2018). [DOI](https://doi.org/10.1017/9781316848142). [Author's official book page](https://cs.uwaterloo.ca/~watrous/TQI/).

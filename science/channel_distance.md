@@ -77,9 +77,9 @@ This positivity is not inferred merely from $`a_P\ge0`$; an arbitrary positive l
 Because output unitary conjugation leaves both the diamond norm and the maximally mixed replacer invariant,
 
 ```math
-\frac12\|\Psi_D-\mathcal R_n\|_\diamond
+\frac12\lVert \Psi_D-\mathcal R_n\rVert_\diamond
 =
-\frac12\|\Lambda-\mathcal R_n\|_\diamond.
+\frac12\lVert \Lambda-\mathcal R_n\rVert_\diamond.
 ```
 
 The inverse ideal circuit is not executed. It is a change of representation in the proof, with no additional rounds or physical outputs.
@@ -89,7 +89,7 @@ The inverse ideal circuit is not executed. It is a change of representation in t
 For Pauli channels $`\Lambda_p`$ and $`\Lambda_q`$ on the same register,
 
 ```math
-\|\Lambda_p-\Lambda_q\|_\diamond
+\lVert \Lambda_p-\Lambda_q\rVert_\diamond
 =
 \sum_{P\in\mathcal P_n}|p_P-q_P|.
 ```
@@ -97,7 +97,7 @@ For Pauli channels $`\Lambda_p`$ and $`\Lambda_q`$ on the same register,
 **Upper bound.** Each Pauli conjugation is a unitary channel and has diamond norm one. The triangle inequality gives
 
 ```math
-\left\|\sum_P(p_P-q_P)\mathrm{Ad}_P\right\|_\diamond
+\left\lVert\sum_P(p_P-q_P)\mathrm{Ad}_P\right\rVert_\diamond
 \le\sum_P|p_P-q_P|.
 ```
 
@@ -106,7 +106,7 @@ For Pauli channels $`\Lambda_p`$ and $`\Lambda_q`$ on the same register,
 Complete depolarization corresponds to the uniform Pauli-error distribution $`u_P=4^{-n}`$. Consequently,
 
 ```math
-\delta(\Psi_D)=\frac12\|p-u\|_1.
+\delta(\Psi_D)=\frac12\lVert p-u\rVert_1.
 ```
 
 This exact reduction controls the worst entangled input, rather than a chosen state, observable, or measurement basis. General channel and Choi conventions are reviewed in [Watrous](../references/RELATED_WORK.md#watrous2018).
@@ -116,7 +116,7 @@ This exact reduction controls the worst entangled input, rather than a chosen st
 For the Pauli-diagonal channel above,
 
 ```math
-\chi^2(p\|u)
+\chi^2(p\Vert u)
 :=
 \sum_Q\frac{(p_Q-u_Q)^2}{u_Q}
 =
@@ -143,14 +143,14 @@ Squaring, summing over $`Q`$, and using character orthogonality proves the ident
 A uniform attenuation estimate $`|a_P|\le e^{-A}`$ for all nonidentity Paulis yields
 
 ```math
-\chi^2(p\|u)\le (4^n-1)e^{-2A}.
+\chi^2(p\Vert u)\le (4^n-1)e^{-2A}.
 ```
 
 The factor $`4^n-1`$ is essential. Controlling only single-site Paulis or a typical Pauli does not establish the complete-channel bound.
 
 ## Lemma: chi-square tensorization
 
-Let block $`j`$ have Pauli-error distribution $`p_j`$ and uniform distribution $`u_j`$. Set $`\xi_j=\chi^2(p_j\|u_j)`$. For the tensor-product channel,
+Let block $`j`$ have Pauli-error distribution $`p_j`$ and uniform distribution $`u_j`$. Set $`\xi_j=\chi^2(p_j\Vert u_j)`$. For the tensor-product channel,
 
 ```math
 1+\chi^2\!\left(\bigotimes_{j=1}^{B}p_j
@@ -160,7 +160,7 @@ Let block $`j`$ have Pauli-error distribution $`p_j`$ and uniform distribution $
 \prod_{j=1}^{B}(1+\xi_j).
 ```
 
-To verify this, write $`1+\chi^2(p\|u)=\sum_xp(x)^2/u(x)`$. The sum factors for product distributions. Hence
+To verify this, write $`1+\chi^2(p\Vert u)=\sum_xp(x)^2/u(x)`$. The sum factors for product distributions. Hence
 
 ```math
 \delta\!\left(\bigotimes_{j=1}^{B}\Psi_j\right)

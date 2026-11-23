@@ -4,12 +4,12 @@ This map follows one question: how many local gate-and-noise rounds are needed t
 
 The selected educational anchor is John Watrous, *The Theory of Quantum Information* (2018). The [Watrous bridge](WATROUS_BRIDGE.md) identifies the relevant sections and translates their conventions. Section and theorem numbers below refer to the author's January 2018 manuscript. Links labeled with a Watrous section open the corresponding official chapter PDF. The book supplies the channel, norm, and composite-system framework; the project pages supply the causal-cone, checkpoint, and depth arguments. Primary research papers cited for imported results are proof dependencies, not additional educational anchors.
 
-The allocation is **13 background/preliminary milestones and 17 narrative/innovation milestones**. The background moves from individual states and observables to complete channel error on a composite register. The narrative moves from individual surviving observables and local spreading operations to matching depth laws, their interpretation, and their scope. Each phase ends in a synthesis. Dependencies name earlier milestones that supply a direct conceptual prerequisite; their own dependencies are inherited.
+The allocation is **13 background/preliminary milestones and 17 narrative/innovation milestones**. The background moves from individual states and observables to complete channel error on a composite register. The narrative derives depth laws for noise on every site, then asks what changes when noise acts only at stationary contacts. Each phase ends in a synthesis. Dependencies name earlier milestones that supply a direct conceptual prerequisite. Their own dependencies are inherited.
 
 | Phase | Milestones | Scientific progression | Closing synthesis |
 | --- | --- | --- | --- |
 | Background and preliminaries | M01–M13 | States and local noise; circuits and distinguishability; complete channel distance and tensor products | The exact optimization problem and its resources |
-| Narrative and innovation | M14–M30 | Passive benchmark; universal converse; geometric and unrestricted constructions; meaning and limitations | The three depth laws as one account of information loss |
+| Narrative and innovation | M14–M30 | Passive benchmark, causal converse, geometric and unrestricted mixing, stationary contacts and transport | How geometry and bath placement determine complete mixing |
 
 ## Phase I: background and preliminaries
 
@@ -89,13 +89,13 @@ The allocation is **13 background/preliminary milestones and 17 narrative/innova
 
 **Central question.** What can a charged layer of reversible control do to operator support?
 
-**Understanding target.** Read a circuit as disjoint one- or two-qubit gates followed by noise on every site, including idle sites. Distinguish nearest-neighbor geometry from unrestricted pair connectivity. Understand that a Clifford maps each Pauli to one Pauli up to phase, making its accumulated noisy trajectory exact, whereas arbitrary unitaries remain allowed in the converse.
+**Understanding target.** Read a circuit as disjoint one- or two-qubit gates followed by noise on the specified bath sites, including those idle during the gate layer. In the original model every site receives noise. In the stationary-contact model the same designated subset receives noise each round. Distinguish nearest-neighbor geometry from unrestricted pair connectivity. A Clifford maps each Pauli to one Pauli up to phase, making its accumulated noisy trajectory exact. The converse allows arbitrary unitaries.
 
 **Dependencies and story role.** [M02](#m02), [M04](#m04), [M05](#m05). This connects the algebraic noise rule to the execution resource and interaction architecture.
 
 **Conceptual connection.** Reversible control can redistribute support. The bath produces the irreversible attenuation, and the number of charged layers limits how quickly that redistribution occurs.
 
-**Source pointers.** Watrous [§2.2.1][w2] on unitary channels and their composition; [architectures and optimization](../science/model.md#architectures-and-optimization), [full syntactic cones](../science/causal_bound.md#full-syntactic-causal-cones), and [noisy Clifford reduction](../science/channel_distance.md#lemma-noisy-clifford-reduction).
+**Source pointers.** Watrous [§2.2.1][w2] on unitary channels and their composition. See [architectures and optimization](../science/model.md#architectures-and-optimization), [full syntactic cones](../science/causal_bound.md#full-syntactic-causal-cones), [noisy Clifford reduction](../science/channel_distance.md#lemma-noisy-clifford-reduction), and [the stationary-contact law](../science/stationary_contacts.md#the-stationary-contact-law).
 
 <a id="m07"></a>
 
@@ -117,7 +117,7 @@ The allocation is **13 background/preliminary milestones and 17 narrative/innova
 
 **Central question.** When does an algebraically constructed observable define a physical test?
 
-**Understanding target.** Distinguish trace norm from operator norm and use their duality to connect states with observables. For a Hermitian $`A`$ with $`\|A\|_\infty\le K`$, explain why $`(I\pm A/K)/2`$ are valid measurement effects. Understand the operator-norm contraction of positive unital maps that underlies the later inverse-noise estimate.
+**Understanding target.** Distinguish trace norm from operator norm and use their duality to connect states with observables. For a Hermitian $`A`$ with $`\lVert A\rVert_\infty\le K`$, explain why $`(I\pm A/K)/2`$ are valid measurement effects. Understand the operator-norm contraction of positive unital maps that underlies the later inverse-noise estimate.
 
 **Dependencies and story role.** [M04](#m04), [M07](#m07). This supplies the normalization step needed to make a mathematical witness experimentally meaningful.
 
@@ -131,7 +131,7 @@ The allocation is **13 background/preliminary milestones and 17 narrative/innova
 
 **Central question.** What accuracy criterion controls every input and every reference at once?
 
-**Understanding target.** Interpret $`\delta(\Psi)=\tfrac12\|\Psi-\mathcal R_n\|_\diamond`$ as the worst output half-trace distance with an input reference. Explain why a reference as large as the input suffices and why a difference of channels can be optimized over input states. Keep the factor of one half explicit.
+**Understanding target.** Interpret $`\delta(\Psi)=\tfrac12\lVert \Psi-\mathcal R_n\rVert_\diamond`$ as the worst output half-trace distance with an input reference. Explain why a reference as large as the input suffices and why a difference of channels can be optimized over input states. Keep the factor of one half explicit.
 
 **Dependencies and story role.** [M03](#m03), [M04](#m04), [M07](#m07). This defines the global success criterion that both constructions and lower bounds must address.
 
@@ -159,7 +159,7 @@ The allocation is **13 background/preliminary milestones and 17 narrative/innova
 
 **Central question.** Why is damping each individual Pauli insufficient unless their number is also counted?
 
-**Understanding target.** Connect Pauli-channel eigenvalues with the finite Fourier transform of the error distribution. Interpret the identity $`\chi^2(p\|u)=\sum_{P\ne I}a_P^2`$ and the bound $`\tfrac12\|p-u\|_1\le\tfrac12\sqrt{\chi^2(p\|u)}`$. Retain the $`4^n-1`$ nonidentity coefficients when passing from a uniform attenuation estimate to a channel estimate.
+**Understanding target.** Connect Pauli-channel eigenvalues with the finite Fourier transform of the error distribution. Interpret the identity $`\chi^2(p\Vert u)=\sum_{P\ne I}a_P^2`$ and the bound $`\tfrac12\lVert p-u\rVert_1\le\tfrac12\sqrt{\chi^2(p\Vert u)}`$. Retain the $`4^n-1`$ nonidentity coefficients when passing from a uniform attenuation estimate to a channel estimate.
 
 **Dependencies and story role.** [M02](#m02), [M10](#m10). This exposes the quantitative cost of controlling every operator, rather than a selected set.
 
@@ -173,7 +173,7 @@ The allocation is **13 background/preliminary milestones and 17 narrative/innova
 
 **Central question.** How do small errors on independent channel blocks combine on an entangled input?
 
-**Understanding target.** Distinguish a tensor product of channels from an assumption that their input state is a product. Use $`1+\chi^2(p\|u)=\prod_j(1+\chi^2(p_j\|u_j))`$ for product Pauli-error distributions. Explain why block error must decrease as the number of blocks grows if the complete register is to meet a fixed error target.
+**Understanding target.** Distinguish a tensor product of channels from an assumption that their input state is a product. Use $`1+\chi^2(p\Vert u)=\prod_j(1+\chi^2(p_j\Vert u_j))`$ for product Pauli-error distributions. Explain why block error must decrease as the number of blocks grows if the complete register is to meet a fixed error target.
 
 **Dependencies and story role.** [M03](#m03), [M09](#m09), [M11](#m11). This combines local estimates into the global bookkeeping needed by both upper bounds.
 
@@ -187,7 +187,7 @@ The allocation is **13 background/preliminary milestones and 17 narrative/innova
 
 **Central question.** Which experiment and resource count do the depth laws describe?
 
-**Understanding target.** Assemble the model: $`n`$ arbitrary input qubits, a fixed architecture, one unitary layer followed by local depolarization per charged round, all outputs retained, and half-diamond error at most $`\epsilon`$. Identify the absence of auxiliary initialization, measurement, reset, and fresh random control. Separate reference systems used in the accuracy definition from physical resources available to the circuit.
+**Understanding target.** Start with $`n`$ arbitrary input qubits on a fixed architecture. Each charged round consists of one unitary layer followed by local depolarization on the specified sites. The output retains all qubits and must reach half-diamond error at most $`\epsilon`$. Identify the absence of auxiliary initialization, measurement, reset, and fresh random control. Separate reference systems used in the accuracy definition from physical resources available to the circuit.
 
 **Dependencies and story role.** [M05](#m05), [M06](#m06), [M08](#m08), [M09](#m09), [M12](#m12). This closes the background phase by joining the physical model, analytic tools, and global target.
 
@@ -286,7 +286,7 @@ for a set $`S`$ of sites with disjoint cone histories. Explain why one valid inp
 
 **Conceptual connection.** Noise can act at several stages of a reversible trajectory. The required exposure can therefore be shared between the input and output weights of a unitary.
 
-**Source pointers.** Watrous [§4.1.2][w4] for the unitary-error-basis background; [line branch-weight existence](../science/geometric_construction.md#lemma-line-branch-weight) and [the exact three-qubit example](../science/finite_examples.md#exact-line-example).
+**Source pointers.** Watrous [§4.1.2][w4] for the unitary-error-basis background; [line branch-weight existence](../science/geometric_construction.md#lemma-line-branch-weight) and [the exact three-qubit example](../science/finite_examples.md#1-an-exact-three-qubit-line-example).
 
 <a id="m20"></a>
 
@@ -378,63 +378,63 @@ for a set $`S`$ of sites with disjoint cone histories. Explain why one valid inp
 
 **Central question.** Which parts of the argument can exact enumeration and dense channel calculations check?
 
-**Understanding target.** Relate the three-qubit branch certificate, rectangular checkpoint sums, and dense normalized Choi calculation to the claims they test. Use the non-Clifford example to distinguish independent witness outcomes from correlated output regions. Separate exhaustive enumeration, sampled checks, floating-point corroboration, and mathematical proof of an arbitrary-size family.
+**Understanding target.** Relate the three-qubit branch certificate, rectangular checkpoint sums, and dense normalized Choi calculation to the claims they test. Use the non-Clifford example to explain how the witness outcomes can be independent even if their output regions carry correlations. Distinguish exhaustive enumeration, sampled checks, floating-point corroboration, and proofs for arbitrary register sizes. Apply the same distinction to the comparison between alternating and clustered contacts at equal contact count.
 
 **Dependencies and story role.** [M10](#m10), [M16](#m16), [M21](#m21), [M22](#m22), [M25](#m25). This connects the abstract arguments to finite channels whose full behavior can be independently inspected.
 
 **Conceptual connection.** Different checks probe different failure modes: Pauli signs and support, checkpoint indexing, probability normalization, reference behavior, and inverse-witness factorization.
 
-**Source pointers.** Watrous [§2.2.2][w2] for Choi representations and [§3.1.1][w3] for measurement distinguishability; [finite examples](../science/finite_examples.md) and [verification instructions](../verification/README.md).
+**Source pointers.** Watrous [§2.2.2][w2] for Choi representations and [§3.1.1][w3] for measurement distinguishability. See [finite examples](../science/finite_examples.md), [equal contact count with different layouts](../science/stationary_contacts.md#equal-contact-count-different-layouts), and [verification instructions](../verification/README.md).
 
 <a id="m27"></a>
 
-### M27. Physical meaning of global mixing
+### M27. Stationary contacts impose two lower bounds
 
-**Central question.** How can reversible control accelerate irreversible information loss under a fixed bath?
+**Central question.** How do the number and placement of fixed bath contacts constrain the depth?
 
-**Understanding target.** Explain how control changes the supports exposed to noise while preserving the state's spectrum during each unitary step. Connect accumulated support to the dimensional exponent. Distinguish complete mixing from local relaxation, uniform outcomes in a chosen basis, and efficient sampling of a circuit's output distribution.
+**Understanding target.** Let $`A`$ be the product of the contact spacings on an aligned Cartesian grid, so there are $`n/A`$ contacts. The normalized Choi state of the replacer is uniform in dimension $`4^n`$, while each use of one contact can multiply the actual Choi rank by at most four. This gives a depth lower bound of order $`A`$. In the inverse-observable argument, count only bath contacts inside each causal history. At depths where the causal bound dominates, the history count is of order at most $`D^{d+1}/A`$, and many disjoint histories yield a second lower bound of order $`(A\log n)^{1/(d+1)}`$.
 
-**Dependencies and story role.** [M05](#m05), [M09](#m09), [M14](#m14), [M18](#m18), [M23](#m23), [M25](#m25). This joins the mechanisms and performance laws into a physical account of the task.
+**Dependencies and story role.** [M10](#m10), [M15](#m15), [M16](#m16), [M18](#m18). This uses two different measurements to lower-bound how fast a stationary bath can erase the register.
 
-**Conceptual connection.** The bath removes information, control changes its exposure, and the global distance measures the evidence that remains anywhere in the output or its reference correlations.
+**Conceptual connection.** Choi rank limits how many independent error directions the bath can generate. Causal histories limit how much access those errors have had to each input region.
 
-**Source pointers.** Watrous [§§3.1.1 and 3.3.2][w3] for operational distinguishability; [why control accelerates the bath](../science/interpretation.md#why-control-can-accelerate-a-fixed-bath), [the dimensional exponent](../science/interpretation.md#the-causal-origin-of-the-dimensional-exponent), and [global accuracy](../science/interpretation.md#global-accuracy-and-a-local-relaxation-time).
+**Source pointers.** Watrous [§2.2.2][w2] for Choi and Kraus representations and [§§3.1.1 and 3.3.2][w3] for distinguishability. See [throughput and causal converses](../science/stationary_contacts.md#throughput-and-causal-converses).
 
 <a id="m28"></a>
 
-### M28. Resource and parameter boundaries
+### M28. Returning sweeps reproduce noise at a checkpoint
 
-**Central question.** Which changes to the setting would require a different theorem?
+**Central question.** How can a fixed contact expose every qubit of its cell while restoring the positions used by the Clifford circuit?
 
-**Understanding target.** Keep fixed $`d`$, $`\eta`$, and $`\epsilon`$ separate from limits in which those parameters vary. Identify the filled-box requirement for the geometric upper bound and the broader occupancy scope of the converse. Distinguish discrete unitary-then-noise rounds from simultaneous continuous-time control, and maximally mixed replacement from pure-state reset or a thermodynamic work-cost claim. Separate offline circuit selection from execution depth.
+**Understanding target.** Track the logical qubits through a sequence of nearest-neighbor SWAPs in one cell. The $`2A`$-round returning sweep restores the site labels and gives each logical qubit two contact exposures. This implements $`\mathcal D_{\eta^2}^{\otimes A}`$ at a checkpoint, including on a cell entangled with other systems. Combine sweeps with the geometric Clifford checkpoints to match both lower bounds at fixed $`d`$, $`\eta`$, and $`\epsilon`$. Count noise during the Clifford rounds through the same Pauli trajectories.
 
-**Dependencies and story role.** [M13](#m13), [M23](#m23), [M25](#m25), [M27](#m27). This fixes the boundary of the combined interpretation without weakening the established statements.
+**Dependencies and story role.** [M19](#m19), [M21](#m21), [M22](#m22), [M23](#m23), [M27](#m27). The earlier geometric upper bound supplies the support checkpoints. The stationary-contact construction supplies the bath exposure at those checkpoints.
 
-**Conceptual connection.** An asymptotic depth law has content only together with its geometry, allowed resources, target channel, and fixed-parameter convention.
+**Conceptual connection.** SWAPs distribute contact time across the cell. The Clifford gates spread Pauli support, so one sweep through a checkpoint can attenuate a single input signal on several qubits at once.
 
-**Source pointers.** Watrous [§2.2.1][w2] and [§3.3.2][w3] for channels and their comparison; [model boundaries](../science/model.md#mechanism-and-boundaries), [geometric scope](../science/geometric_construction.md#scope-and-inherited-ingredients), and [limits of the statement](../science/interpretation.md#limits-of-the-statement).
+**Source pointers.** Watrous [§2.2.1][w2] for tensor products and composition and [§3.3.2][w3] for complete error. See [returning sweeps and the Clifford upper bound](../science/stationary_contacts.md#returning-sweeps-and-clifford-upper-bound) and [geometric scope](../science/geometric_construction.md#scope-and-inherited-ingredients).
 
 <a id="m29"></a>
 
-### M29. Inherited mechanisms and the matching contribution
+### M29. Transport alone and the geometry of contact placement
 
-**Central question.** Which ingredients are established inputs, and what connects them into these optima?
+**Central question.** What depth can transport alone achieve, and can equal contact counts lead to different mixing depths?
 
-**Understanding target.** Attribute scrambling-enhanced noisy mixing to the existing literature, linear-depth line compilation to Maslov and Yang, and the normalized random-matching tail to Anand et al. Identify the connecting arguments: the arbitrary-unitary inverse-cone converse, recursive checkpoint exposure, and complete-channel accounting on all physical input qubits. Recognize that the geometric theorem has independent proof dependencies from the unrestricted upper bound.
+**Understanding target.** With only SWAP and onsite gates, each logical qubit follows one trajectory and accumulates its own depolarization. The total contact exposure per round is $`n/A`$. Complete mixing requires order $`\log n`$ exposures per qubit on average, and repeating returning sweeps attains depth $`\Theta(A\log n)`$. Compare a periodic placement with the same number of contacts clustered into a slab. A site whose causal history has yet to reach the slab retains an observable, so the contact count alone cannot determine the depth for a general layout.
 
-**Dependencies and story role.** [M18](#m18), [M20](#m20), [M23](#m23), [M24](#m24), [M25](#m25), [M28](#m28). This locates the complete result within its mathematical and physical antecedents.
+**Dependencies and story role.** [M14](#m14), [M26](#m26), [M27](#m27), [M28](#m28). This identifies the effect of support spreading at fixed placement and the effect of placement at fixed contact count.
 
-**Conceptual connection.** A familiar mechanism can support a different quantitative theorem when the resource model, universal converse, and operational error criterion are all made compatible.
+**Conceptual connection.** Nonuniform contact time leaves many small residual biases, and clustering can keep entire input regions out of contact for many rounds. Both effects are visible in the complete-channel criterion.
 
-**Source pointers.** Watrous [§§3.3.2–3.3.3][w3] provides the foundational distance framework; [related work and proof dependencies](../references/RELATED_WORK.md), especially [Quek et al.](../references/RELATED_WORK.md#quek2024), [Maslov and Yang](../references/RELATED_WORK.md#maslov2023), and [Anand et al.](../references/RELATED_WORK.md#anand2026).
+**Source pointers.** Watrous [§3.2][w3] for fidelity and trace distance. See [the transport-only benchmark](../science/stationary_contacts.md#transport-only-benchmark) and [equal contact count with different layouts](../science/stationary_contacts.md#equal-contact-count-different-layouts).
 
 <a id="m30"></a>
 
-### M30. Final synthesis: three depth laws, one information-loss problem
+### M30. Final synthesis of complete mixing depth
 
-**Central question.** How do the lower bounds, constructions, and passive benchmark fit into a single answer?
+**Central question.** How do interaction geometry and bath placement jointly determine the cost of erasing all input information?
 
-**Understanding target.** Explain the three asymptotic laws under the same complete-channel target and resource contract:
+**Understanding target.** Recover the uniform-bath laws and the stationary-contact crossover under the common complete-channel target.
 
 ```math
 \begin{aligned}
@@ -444,17 +444,21 @@ D_{\min}([L]^d,\eta,\epsilon)
 &=\Theta_{d,\eta,\epsilon}\!\left((\log n)^{1/(d+1)}\right),
 \qquad n=L^d,\\
 D_{\min}(K_n,\eta,\epsilon)
-&=\Theta_{\eta,\epsilon}(\log\log n).
+&=\Theta_{\eta,\epsilon}(\log\log n),\\
+D_{\mathrm{contact}}
+&=\Theta_{d,\eta,\epsilon}\!\left(\max\{A,(A\log n)^{1/(d+1)}\}\right),\\
+D_{\mathrm{transport}}
+&=\Theta_{d,\eta,\epsilon}(A\log n).
 \end{aligned}
 ```
 
-Connect the lower bounds to limits on cumulative causal support and the upper bounds to circuits that expose every Pauli to enough local noise. Distinguish what is asymptotically optimal from unoptimized constants, finite examples, and imported ingredients.
+Explain which bound determines the depth in each regime, including the crossover near $`A\asymp(\log n)^{1/d}`$. State the aligned Cartesian hypothesis for the stationary-contact law and the fixed noise and error convention. Identify the respective roles of line Clifford compilation, unrestricted Pauli spreading, and the returning-sweep construction. Distinguish complete mixing from local relaxation or pure-state initialization.
 
-**Dependencies and story role.** [M14](#m14), [M18](#m18), [M23](#m23), [M25](#m25), [M26](#m26), [M27](#m27), [M28](#m28), [M29](#m29). This closes the narrative phase by integrating the full problem, both matching proofs, and their operational meaning.
+**Dependencies and story role.** [M14](#m14), [M18](#m18), [M23](#m23), [M25](#m25), [M26](#m26), [M27](#m27), [M28](#m28), [M29](#m29). This connects each depth law to its model, converse, and construction.
 
-**Conceptual connection.** The bath is unchanged across the three settings. The attainable history of operator support changes, and the global information-loss criterion turns that difference into the stated depth laws.
+**Conceptual connection.** Interactions control how far information can spread. Bath placement controls how much of that support sees noise. A global measurement can detect information that survives either constraint.
 
-**Source pointers.** Watrous [§§3.1.1 and 3.3.2–3.3.3][w3] supplies the shared state and channel interpretation; [the main statements](../science/model.md#theorem-g-the-geometric-optimum), [causal converse](../science/causal_bound.md), [geometric construction](../science/geometric_construction.md), [unrestricted construction](../science/unrestricted_connectivity.md), [passive benchmark](../science/passive.md), and [physical interpretation](../science/interpretation.md).
+**Source pointers.** Watrous [§§3.1.1 and 3.3.2–3.3.3][w3] supplies the shared state and channel interpretation. See [the uniform-bath theorems](../science/model.md#theorem-g-the-geometric-optimum), [the stationary-contact theorem](../science/stationary_contacts.md#the-stationary-contact-law), [physical interpretation](../science/interpretation.md), and [related work and proof dependencies](../references/RELATED_WORK.md).
 
 ## Source route
 

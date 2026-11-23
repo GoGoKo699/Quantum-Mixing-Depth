@@ -9,7 +9,7 @@ Fix $`d\geq1`$, $`0<\eta<1`$, and $`0<\epsilon<1`$. Consider $`n=L^d`$ arbitrary
 Let $`D_{\min}([L]^d,\eta,\epsilon)`$ be the minimum number of rounds for which
 
 ```math
-\frac12\left\|\Psi_D-\mathcal R_n\right\|_\diamond
+\frac12\left\lVert\Psi_D-\mathcal R_n\right\rVert_\diamond
 \leq\epsilon,
 \qquad
 \tau_n=I/2^n.
@@ -261,7 +261,7 @@ By [chi-square tensorization](channel_distance.md#lemma-chi-square-tensorization
 
 ```math
 \begin{aligned}
-\frac12\left\|\Psi_D-\mathcal R_n\right\|_\diamond
+\frac12\left\lVert\Psi_D-\mathcal R_n\right\rVert_\diamond
 &\leq\frac12
 \sqrt{\left(1+e^{-cm^{d+1}}\right)^B-1}\\
 &\leq\frac12

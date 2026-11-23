@@ -19,9 +19,10 @@ Each entry is a focused lookup for a part of the project. The research dependenc
 | Physical measurements and residual distinguishability | [Sections 2.3.1–2.3.2](https://cs.uwaterloo.ca/~watrous/TQI/TQI.2.pdf); [Section 3.1.1](https://cs.uwaterloo.ca/~watrous/TQI/TQI.3.pdf), Theorem 3.4 and Proposition 3.5 | [M07](MILESTONES.md#m07), [M16](MILESTONES.md#m16) |
 | Complete channel error and the sufficient reference dimension | [Sections 3.3.2–3.3.3](https://cs.uwaterloo.ca/~watrous/TQI/TQI.3.pdf); Definition 3.43 and Theorems 3.46 and 3.51 | [M09](MILESTONES.md#m09), [M10](MILESTONES.md#m10) |
 | Combining many weak distinguishability signals | [Section 3.2](https://cs.uwaterloo.ca/~watrous/TQI/TQI.3.pdf); Definition 3.11, Proposition 3.16, and Theorem 3.33 | [M14](MILESTONES.md#m14), [M17](MILESTONES.md#m17) |
-| Pauli mixtures and preservation of the maximally mixed state | [Sections 4.1.1–4.1.2 and 4.2.2](https://cs.uwaterloo.ca/~watrous/TQI/TQI.4.pdf) | [M05](MILESTONES.md#m05), [M10](MILESTONES.md#m10), [M27](MILESTONES.md#m27) |
+| Pauli mixtures and preservation of the maximally mixed state | [Sections 4.1.1–4.1.2 and 4.2.2](https://cs.uwaterloo.ca/~watrous/TQI/TQI.4.pdf) | [M05](MILESTONES.md#m05), [M10](MILESTONES.md#m10), [M28](MILESTONES.md#m28) |
+| Kraus rank and a support test for the normalized Choi state | [Section 2.2.2](https://cs.uwaterloo.ca/~watrous/TQI/TQI.2.pdf), Theorem 2.22, and [Section 3.1.1](https://cs.uwaterloo.ca/~watrous/TQI/TQI.3.pdf), Theorem 3.4 | [M27](MILESTONES.md#m27) |
 
-The project supplies its own circuit-support arguments, Fourier chi-square calculation, geometric recursion, and conversion from a spreading theorem to complete mixing. These steps are developed below and in the corresponding science pages.
+The project supplies its own circuit-support arguments, Fourier chi-square calculation, geometric recursion, and conversion from a spreading theorem to complete mixing. The stationary-contact result adds a rank bound and a construction that uses returning SWAP sweeps to distribute contact exposure.
 
 ## Notation and the complete target
 
@@ -48,10 +49,10 @@ Theorems 3.46 and 3.51 make this a maximization over quantum input states on the
 ```math
 \delta(\Psi_D)
 =\max_{\rho_{AR}}
-\frac12\left\|
+\frac12\left\lVert
 (\Psi_D\otimes\mathrm{id}_R)(\rho_{AR})
 -\tau_n\otimes\rho_R
-\right\|_1,
+\right\rVert_1,
 \qquad \dim R=2^n.
 ```
 
@@ -71,7 +72,7 @@ The one-qubit map is
 
 Here $`\eta`$ measures retention: a larger value means weaker noise. For a traceless Pauli matrix, $`\mathcal D_\eta(P)=\eta P`$. A noise-strength convention written as $`(1-p)X+p\mathrm{Tr}(X)I_2/2`$ therefore has $`p=1-\eta`$. This $`p`$ is different from the total probability of a nonidentity Pauli error, which is $`3(1-\eta)/4`$.
 
-Each charged round consists of disjoint one- or two-qubit gates followed by $`\mathcal D_\eta`$ on every site. An idle site receives the same noise, and an identity layer still costs one round. The depth counts this discrete sequence. It does not identify a noisy finite-duration entangling Hamiltonian with an ideal unitary followed by depolarization.
+Each charged round consists of disjoint one- or two-qubit gates followed by $`\mathcal D_\eta`$ on the bath sites. The uniform-bath model uses every site. The stationary-contact model uses the same designated subset in every round and the identity map on other sites. An idle bath site receives the same noise, and an identity layer still costs one round. The depth counts an ideal unitary layer followed by noise as a discrete step.
 
 With $`\lambda=-\ln\eta>0`$, a coefficient multiplied by $`\eta^s`$ has attenuation $`e^{-\lambda s}`$. Natural logarithms are used in the depth estimates. The binary entropy $`H_2`$ appearing in Pauli-counting bounds uses base-two logarithms explicitly.
 
@@ -287,7 +288,7 @@ For classical distributions $`P,Q`$, Watrous's unsquared fidelity becomes the Bh
 
 Watrous's measurement framework explains why this classical distinguishability lower-bounds channel error. The project supplies the inverse-witness construction, the disjoint-history product identity, and the packing argument that finds many such witnesses.
 
-## How the three depth scales fit together
+## Complete mixing with noise on every site
 
 With no control, every local Pauli retains $`\eta^D`$. The [passive proof](../science/passive.md) shows that the complete error changes on the scale $`n\eta^{2D}=O(1)`$, giving
 
@@ -305,6 +306,21 @@ Control changes the causal volume available to each initial signal. On a fixed-d
 | Unrestricted pair connectivity | $`\Theta(\ln\ln n)`$ | [Unrestricted construction](../science/unrestricted_connectivity.md) and [pair-connectivity converse](../science/causal_bound.md#corollary-unrestricted-connectivity) |
 
 The upper and lower bounds quantify the same physical task. All input qubits remain in the output; the error is global and reference-sensitive; every elementary noise round is charged. The geometric matching upper requires the regular regions stated in the model. The constants depend on fixed $`d`$, $`\eta`$, and $`\epsilon`$ where applicable. These are discrete mixing laws for an infinite-temperature target, with no heat or work assignment and no claim of pure-state initialization.
+
+## What changes when bath contacts are stationary
+
+Suppose only a fixed set $`S`$ of sites receives depolarization in each round. For a Clifford path the attenuation exponent counts $`|\operatorname{supp}(P_\ell)\cap S|`$ at layer $`\ell`$. The inverse-observable converse also counts an intersection, now $`|C_i(\ell)\cap S|`$ for the full syntactic causal cone. The two intersections concern different objects. One follows a particular Pauli and the other bounds the support of an arbitrary inverse observable. See [the stationary-contact model and law](../science/stationary_contacts.md#the-stationary-contact-law).
+
+The Choi representation gives a second lower bound. One contact has four Pauli Kraus operators. A depth-$`D`$ channel using $`|S|`$ contacts per round has at most $`4^{|S|D}`$ Kraus products, so the support rank $`r`$ of its normalized Choi state is at most $`4^{|S|D}`$. The support projector accepts this state with probability one and accepts the completely mixed Choi state with probability $`r/4^n`$. The complete error is therefore at least $`1-r/4^n`$. This argument requires neither Clifford control nor an equality between Choi trace distance and diamond distance. At fixed error, it requires depth of order $`n/|S|`$. See [throughput and causal converses](../science/stationary_contacts.md#throughput-and-causal-converses).
+
+For an aligned Cartesian grid, let $`A`$ be the product of the contact spacings. A returning SWAP sweep inside each cell visits the contact with every logical qubit equally often and restores the original site labels. The complete sweep is therefore an exact product depolarization channel at the checkpoint, with the same retention on every logical qubit. Repeating these sweeps at the geometric Clifford checkpoints turns the spreading proof into a complete-channel estimate at sparse, stationary bath sites. Together with the two lower bounds, this yields
+
+```math
+D_{\mathrm{contact}}=\Theta_{d,\eta,\epsilon}
+\!\left(\max\{A,(A\ln n)^{1/(d+1)}\}\right).
+```
+
+With SWAP and onsite gates alone, each logical qubit instead acquires a retention factor determined by its own contact count. The product of those single-qubit channels must suppress the aggregate distinguishability of the entire register, so the matching depth in that class is $`\Theta(A\ln n)`$. For one contact, these two depths become $`\Theta(n)`$ and $`\Theta(n\ln n)`$. The laws fix noise strength and whole-register error and assume the stated grid alignment. Clustering the same number of contacts can leave sites beyond causal reach for much longer and can change the depth. See [returning sweeps](../science/stationary_contacts.md#returning-sweeps-and-clifford-upper-bound), [transport alone](../science/stationary_contacts.md#transport-only-benchmark), and [equal contact count with different layouts](../science/stationary_contacts.md#equal-contact-count-different-layouts).
 
 ## Source inheritance and the remaining reading route
 

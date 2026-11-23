@@ -51,6 +51,12 @@ The matching [unrestricted-connectivity construction](unrestricted_connectivity.
 
 The architecture changes how rapidly information can be exposed to independent noise. The local noise strength and complete-channel target remain the same.
 
+## Contact throughput and geometry
+
+When noise acts on one fixed contact per $`A`$ sites, each charged tick injects at most two bits of Pauli randomness per contact. This gives a depth floor of order $`A`$ for complete erasure. In a regular grid the causal exposure in depth $`D\gtrsim A`$ is at most order $`D^{d+1}/A`$. The two effects jointly give the [stationary-contact law](stationary_contacts.md#the-stationary-contact-law).
+
+Returning SWAP sweeps distribute the available local noise. Clifford spreading lets each sweep damp many components of a single input Pauli. This reduces the depth relative to a [transport-only schedule](stationary_contacts.md#transport-only-benchmark), where each wire must accumulate enough noise on its own. The total contact count also misses the [delay from clustering contacts](stationary_contacts.md#equal-contact-count-different-layouts).
+
 ## Global accuracy and a local relaxation time
 
 Under passive depolarization, each local Pauli multiplier is $`\eta^D`$. A single qubit therefore approaches equilibrium in a number of rounds independent of register size, for fixed local accuracy.

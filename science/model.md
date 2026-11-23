@@ -47,17 +47,17 @@ The complete mixing error is
 ```math
 \delta(\Psi_D)
 =
-\frac12\|\Psi_D-\mathcal R_n\|_\diamond.
+\frac12\lVert \Psi_D-\mathcal R_n\rVert_\diamond.
 ```
 
 For a difference of quantum channels, this equals the largest output half-trace distance over input states with a reference. In particular, the target condition is
 
 ```math
 \frac12
-\left\|
+\left\lVert
 (\Psi_D\otimes\mathrm{id}_R)(\rho_{AR})
 -\tau_n\otimes\rho_R
-\right\|_1
+\right\rVert_1
 \le \epsilon
 ```
 
@@ -100,6 +100,16 @@ D_{\min}([L]^d,\eta,\epsilon)
 The lower bound holds for arbitrary allowed unitary circuits. The matching upper uses a fixed Clifford circuit on precisely the $`n`$ input qubits and retains all of them. It uses at most $`O_{d,\eta,\epsilon}(n(\log n)^{1/(d+1)})`$ elementary gates. The gate-count upper is a resource bound for the construction; gate-count optimality is not asserted.
 
 The [causal converse](causal_bound.md) limits the accumulated spacetime support of inverse observables. The [geometric construction](geometric_construction.md) makes every nonidentity Pauli accumulate sufficient support at a finite sequence of boundaries between stages, and then lets the local noise act there. Its imported implementation ingredient is linear-depth nearest-neighbor Clifford synthesis from [Maslov and Yang](../references/RELATED_WORK.md#maslov2023).
+
+## Theorem S: stationary noise contacts
+
+In the [stationary-contact variant](stationary_contacts.md#the-stationary-contact-law), a filled cube is tiled by cells of side lengths $`s_j\mid L`$ and only one fixed corner of each cell depolarizes per round. With cell volume $`A=\prod_j s_j`$, fixed retention and fixed half-diamond error below $`1/2`$, the optimal depth is
+
+```math
+D_{\min}=\Theta_{d,\eta,\epsilon}\!\left(\max\{A,(A\ln n)^{1/(d+1)}\}\right).
+```
+
+The lower bound allows all gates in the geometric model. A returning SWAP sweep delivers contact noise to all carriers in a cell, and Clifford stages spread support across cells. With SWAPs and onsite gates alone, the optimal depth is $`\Theta_{\eta,\epsilon}(A\ln n)`$. The input, reference and output conventions are the same as in the uniform-noise model.
 
 ## Theorem A: the unrestricted-connectivity optimum
 

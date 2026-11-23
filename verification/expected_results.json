@@ -495,5 +495,13 @@
     }
   ],
   "schema_version": 1,
+  "stationary_contacts": {
+    "clifford_three_round_half_diamond": "3/16",
+    "clustered_six_qubit_half_diamond_lower": "1/2",
+    "non_clifford_inverse_witness": true,
+    "returning_sweep_lengths_checked": 128,
+    "spaced_six_qubit_half_diamond": "136072953/819200000",
+    "transport_three_round_half_diamond": "3/8"
+  },
   "status": "PASS"
 }

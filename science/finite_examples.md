@@ -78,7 +78,7 @@ The endpoint branch certificate guarantees $`S(P)\ge12`$. Exact enumeration give
 After analytical conjugation by $`V_3^\dagger`$, the Pauli eigenvalues are exactly $`a_P=\eta^{S(P)}`$. The verifier constructs the Pauli-error probabilities by the finite Fourier transform and checks
 
 ```math
-\chi^2(p\|u)=\sum_{P\ne I}a_P^2.
+\chi^2(p\Vert u)=\sum_{P\ne I}a_P^2.
 ```
 
 Independently, it starts from a maximally entangled state of the three data qubits and an eight-dimensional reference, executes every dense gate and noise channel on the data, and forms the normalized $`64\times64`$ Choi matrix. The direct trace distance from $`I/64`$ agrees with the exact Pauli-channel half-diamond error.
@@ -95,8 +95,8 @@ The decoded dense Choi matrix differs from the independently constructed Pauli-m
 For two disjoint copies of the block protocol, direct enumeration of the $`4^6`$ Pauli-error probabilities gives half-diamond errors 0.0469861664 and 0.6759112960, respectively. The verifier checks the tensorization identity
 
 ```math
-1+\chi^2(p\otimes p\|u\otimes u)
-=\bigl(1+\chi^2(p\|u)\bigr)^2
+1+\chi^2(p\otimes p\Vert u\otimes u)
+=\bigl(1+\chi^2(p\Vert u)\bigr)^2
 ```
 
 and the resulting Cauchy-Schwarz upper bound. At $`\eta=0.97`$ that bound exceeds one before capping and is therefore uninformative, while the direct finite error remains well defined. Small block examples need not lie in the asymptotic regime where the theorem's coarse error bound is useful.
@@ -153,7 +153,13 @@ They agree with the product formula to within $`1.2\times10^{-16}`$. Their total
 
 <a id="passive-check"></a>
 
-## 5. Passive baseline and verification limits
+## 5. Stationary-contact examples
+
+On a six-site path with retention $`\eta=1/10`$, two rounds of pairwise SWAPs through alternating contacts give the exact product channel $`\mathcal D_{\eta}^{\otimes 6}`$. Its half-diamond error is about $`0.166105`$. With the same three contacts clustered at the left edge, site 6 cannot reach a contact in two rounds, so every such circuit has error at least $`1/2`$.
+
+With two sites, one contact and retention $`1/2`$, the [three-round entangling circuit](stationary_contacts.md#transport-only-benchmark) has exact error $`3/16`$, versus $`3/8`$ for the best three-round SWAP-only circuit. The [verification suite](../verification/README.md#stationary-contacts) checks the Pauli Fourier and direct Choi calculations independently.
+
+## 6. Passive baseline and verification limits
 
 For four small choices of register size, noise retention, and depth, the verifier independently constructs the complete $`4^n`$ passive Pauli-error distribution and the two binomial distributions in the [passive error formula](passive.md). Their total variation distances agree within $`2.3\times10^{-16}`$. The stated finite upper and lower bounds also hold in all four cases.
 
