@@ -44,6 +44,14 @@ Scrambling-enhanced noise and rapidly mixing noisy circuits are [established pri
 
 A contact grid has two limits. The total number of contact uses bounds how much information can be erased, while the number inside a causal cone bounds how fast a local input can lose its bias. Returning SWAP sweeps and Clifford spreading jointly attain both bounds. With one contact the optimal depth is $`\Theta(n)`$, compared with $`\Theta(n\ln n)`$ for SWAP-only transport. At the same contact count, packing equally spaced planes into a slab can change the depth from polylogarithmic to linear in the lattice side length. [Proof and comparisons](science/stationary_contacts.md)
 
+## Run the lattice mixing circuit
+
+1. **Plan the blocks and gates.** Start with the supplied unknown state on all lattice qubits. For stationary contacts, use the [contact-aligned tiling and sweep count](science/stationary_contacts.md#returning-sweeps-and-clifford-upper-bound), including its whole-cube case. Choose each length's [line Clifford](science/geometric_construction.md#lemma-line-branch-weight) in advance and [compile it into nearest-neighbor layers](science/geometric_construction.md#linear-depth-on-a-line).
+2. **Run coordinate stages and noise checkpoints.** Run the blocks in parallel using the [coordinate-line order](science/geometric_construction.md#coordinate-line-recursion), which is axes 1, 2, 1 in two dimensions. Apply independent depolarization at the fixed contacts after every gate or idle layer. At each checkpoint, including before the first and after the last stage, run the planned number of sweeps in parallel across all contact cells. Each sweep follows a serpentine path starting at its contact. Alternate SWAPs on pairs 1–2, 3–4, and so on, then 2–3, 4–5, and so on, for twice the cell size in rounds. Each wire label returns to its starting site after two visits to the contact.
+3. **Return all physical outputs.** The gate and noise rounds alone mix the register. For any input and idle reference, the joint output is within the chosen half-trace-distance error of the maximally mixed register tensored with the unchanged reference state. No measurements or classical output processing are required.
+
+With noise on every site, use the [uniform-noise tiling](science/geometric_construction.md#tiling-the-physical-register) and its prescribed idle rounds at each checkpoint. Every site depolarizes after each gate or idle layer. The [three-qubit line example](science/finite_examples.md#1-an-exact-three-qubit-line-example) and [two-site contact example](science/finite_examples.md#5-stationary-contact-examples) show finite gate sequences and their errors.
+
 ## Read the science
 
 Begin with the [model and exact claims](science/model.md). The [physical interpretation](science/interpretation.md) connects the proof mechanisms and resource assumptions.
