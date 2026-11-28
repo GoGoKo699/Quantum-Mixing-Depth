@@ -1,0 +1,16 @@
+{
+  "README.md": [
+    "Run the lattice mixing circuit",
+    "When only the contacts are noisy"
+  ],
+  "science/stationary_contacts.md": [
+    "Returning sweeps and Clifford upper bound",
+    "Transport-only benchmark"
+  ],
+  "science/finite_examples.md": [
+    "5. Stationary-contact examples"
+  ],
+  "learning/WATROUS_BRIDGE.md": [
+    "What changes when bath contacts are stationary"
+  ]
+}
